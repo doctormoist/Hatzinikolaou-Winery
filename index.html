@@ -158,10 +158,10 @@
     }
 
     @keyframes glassFill {
-      0%   { y: 150px; height: 0px; }
-      45%  { y: 93px; height: 57px; }
-      75%  { y: 93px; height: 57px; }
-      100% { y: 150px; height: 0px; }
+      0%   { y: 123px; height: 0px; }
+      45%  { y: 76px; height: 47px; }
+      75%  { y: 76px; height: 47px; }
+      100% { y: 123px; height: 0px; }
     }
 
     @keyframes streamFlow {
@@ -175,8 +175,8 @@
     @media (prefers-reduced-motion: reduce) {
       .pour .glass-liquid {
         animation: none;
-        y: 110px;
-        height: 40px;
+        y: 92px;
+        height: 31px;
       }
       .pour .stream {
         animation: none;
@@ -263,7 +263,7 @@
 
     <p class="tagline">Something is fermenting&hellip;</p>
 
-    <svg class="pour" viewBox="0 0 300 195" aria-hidden="true" focusable="false">
+    <svg class="pour" viewBox="0 0 300 200" aria-hidden="true" focusable="false">
       <defs>
         <clipPath id="bottleClip">
           <path d="M52,10 C52,6 56,4 60,4 C64,4 68,6 68,10 L68,110 C72,116 78,122 86,130 C92,136 94,140 94,148 L94,286 C94,300 84,308 70,308 L50,308 C36,308 26,300 26,286 L26,148 C26,140 28,136 34,130 C42,122 48,116 52,110 Z" />
@@ -272,11 +272,11 @@
           <rect x="30" y="204" width="64" height="26" rx="3" />
         </clipPath>
         <clipPath id="glassClip">
-          <path d="M215,78 C215,118 230,138 245,148 C260,138 275,118 275,78 Z" />
+          <path d="M161,70 C158,99 161,117 180,123 C199,117 202,99 199,70 Z" />
         </clipPath>
       </defs>
 
-      <g class="bottle-group" transform="translate(129.7,21.9) rotate(36) scale(0.45)">
+      <g class="bottle-group" transform="translate(146.9,10.2) rotate(40.2) scale(0.503)">
         <rect class="liquid-static" x="26" width="68" y="190" height="96" clip-path="url(#bottleClip)" />
         <rect class="foil" x="50" width="20" y="8" height="90" clip-path="url(#bottleClip)" />
         <rect class="foil-edge" x="50" width="20" y="92" height="6" clip-path="url(#bottleClip)" />
@@ -288,12 +288,12 @@
         <path class="bottle-outline" d="M52,10 C52,6 56,4 60,4 C64,4 68,6 68,10 L68,110 C72,116 78,122 86,130 C92,136 94,140 94,148 L94,286 C94,300 84,308 70,308 L50,308 C36,308 26,300 26,286 L26,148 C26,140 28,136 34,130 C42,122 48,116 52,110 Z" />
       </g>
 
-      <path class="stream" d="M150,40 C172,54 196,68 216,84" />
+      <path class="stream" d="M168,32 C172,45 176,58 179,72" />
 
-      <rect class="glass-liquid" x="213" width="64" y="150" height="0" clip-path="url(#glassClip)" />
-      <path class="glass-outline" d="M215,78 C215,118 230,138 245,148 C260,138 275,118 275,78" />
-      <line class="glass-stem" x1="245" y1="148" x2="245" y2="176" />
-      <ellipse class="glass-base" cx="245" cy="178" rx="22" ry="4" />
+      <rect class="glass-liquid" x="155" width="50" y="123" height="0" clip-path="url(#glassClip)" />
+      <path class="glass-outline" d="M161,70 C158,99 161,117 180,123 C199,117 202,99 199,70" />
+      <line class="glass-stem" x1="180" y1="123" x2="180" y2="144" />
+      <ellipse class="glass-base" cx="180" cy="146" rx="18" ry="3" />
     </svg>
 
     <p class="message">Our new website is on its way. Please check back soon.</p>
