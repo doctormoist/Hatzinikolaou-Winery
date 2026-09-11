@@ -94,14 +94,28 @@
 
     .bottle {
       display: block;
-      width: 68px;
+      width: 60px;
       height: auto;
-      margin: 4px auto 20px;
+      margin: 6px auto 20px;
     }
 
     .bottle .liquid {
       fill: #7a1e3e;
       animation: fillBottle 6s ease-in-out infinite;
+    }
+
+    .bottle .foil {
+      fill: var(--gold);
+    }
+
+    .bottle .foil-edge {
+      fill: #8a6423;
+    }
+
+    .bottle .label {
+      fill: var(--paper);
+      stroke: var(--green-deep);
+      stroke-width: 1.4;
     }
 
     .bottle .bottle-outline {
@@ -112,17 +126,17 @@
     }
 
     @keyframes fillBottle {
-      0%   { y: 230px; height: 0px; }
-      55%  { y: 40px; height: 190px; }
-      80%  { y: 40px; height: 190px; }
-      100% { y: 230px; height: 0px; }
+      0%   { y: 290px; height: 0px; }
+      55%  { y: 145px; height: 145px; }
+      80%  { y: 145px; height: 145px; }
+      100% { y: 290px; height: 0px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .bottle .liquid {
         animation: none;
-        y: 90px;
-        height: 140px;
+        y: 160px;
+        height: 130px;
       }
     }
 
@@ -205,14 +219,17 @@
 
     <p class="tagline">Something is fermenting&hellip;</p>
 
-    <svg class="bottle" viewBox="0 0 120 260" aria-hidden="true" focusable="false">
+    <svg class="bottle" viewBox="0 0 120 320" aria-hidden="true" focusable="false">
       <defs>
         <clipPath id="bottleClip">
-          <path d="M50,4 L70,4 L70,20 C70,26 76,28 78,34 C86,54 90,60 90,80 L90,230 C90,242 82,250 70,250 L50,250 C38,250 30,242 30,230 L30,80 C30,60 34,54 42,34 C44,28 50,26 50,20 Z" />
+          <path d="M50,14 C50,8 55,5 60,5 C65,5 70,8 70,14 L70,96 C74,101 78,106 84,114 C90,122 94,128 94,140 L94,284 C94,298 84,306 70,306 L50,306 C36,306 26,298 26,284 L26,140 C26,128 30,122 36,114 C42,106 46,101 50,96 Z" />
         </clipPath>
       </defs>
-      <rect class="liquid" x="28" width="64" y="230" height="0" clip-path="url(#bottleClip)" />
-      <path class="bottle-outline" d="M50,4 L70,4 L70,20 C70,26 76,28 78,34 C86,54 90,60 90,80 L90,230 C90,242 82,250 70,250 L50,250 C38,250 30,242 30,230 L30,80 C30,60 34,54 42,34 C44,28 50,26 50,20 Z" />
+      <rect class="liquid" x="24" width="72" y="290" height="0" clip-path="url(#bottleClip)" />
+      <rect class="foil" x="24" width="72" y="0" height="118" clip-path="url(#bottleClip)" />
+      <rect class="foil-edge" x="24" width="72" y="112" height="5" clip-path="url(#bottleClip)" />
+      <rect class="label" x="40" y="192" width="40" height="54" rx="4" />
+      <path class="bottle-outline" d="M50,14 C50,8 55,5 60,5 C65,5 70,8 70,14 L70,96 C74,101 78,106 84,114 C90,122 94,128 94,140 L94,284 C94,298 84,306 70,306 L50,306 C36,306 26,298 26,284 L26,140 C26,128 30,122 36,114 C42,106 46,101 50,96 Z" />
     </svg>
 
     <p class="message">Our new website is on its way. Please check back soon.</p>
