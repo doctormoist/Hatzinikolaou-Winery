@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hatzinikolaou Winery — Coming Soon</title>
+  <meta name="description" content="Hatzinikolaou Winery, a family winery on Kos, Greece. Our new website is on its way.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%234a2545'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23faf6f0' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #4a2545;
+      --purple-deep: #341a30;
+      --green: #4c6b3f;
+      --green-deep: #34492b;
+      --gold: #b98b3e;
+      --cream: #f8f1e4;
+      --paper: #fffdf9;
+      --ink: #2a2126;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, "Palatino Linotype", serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(76, 107, 63, 0.07), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(74, 37, 69, 0.08), transparent 45%);
+    }
+
+    main {
+      position: relative;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      background: var(--paper);
+      border: 1px solid #e8dcc4;
+      border-radius: 4px;
+      padding: clamp(32px, 7vw, 60px) clamp(22px, 6vw, 52px);
+      box-shadow: 0 18px 50px rgba(52, 26, 48, 0.1);
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(76, 107, 63, 0.35);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    .logo {
+      display: block;
+      width: min(360px, 82%);
+      height: auto;
+      margin: 6px auto 18px;
+    }
+
+    .place {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: var(--green-deep);
+      margin: 0 0 30px;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      color: var(--purple);
+      margin: 0 0 18px;
+      line-height: 1.2;
+    }
+
+    .message {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 6px;
+    }
+
+    .message-el {
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: #6b5f52;
+      margin: 0 0 26px;
+    }
+
+    .eta {
+      display: inline-block;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: var(--green);
+      padding: 9px 22px;
+      border-radius: 999px;
+      margin-bottom: 30px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8dcc4;
+      width: 60px;
+      margin: 0 auto 26px;
+    }
+
+    .contact {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .contact a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(74, 37, 69, 0.3);
+    }
+
+    .contact a:hover,
+    .contact a:focus-visible {
+      color: var(--green-deep);
+      border-color: var(--green-deep);
+    }
+
+    footer {
+      margin-top: 26px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.02em;
+      color: #a5977f;
+    }
+
+    @media (prefers-contrast: more) {
+      main { border-color: var(--ink); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <picture>
+      <source srcset="assets/logo.webp" type="image/webp">
+      <img class="logo" src="assets/logo.png" alt="Hatzinikolaou Winery">
+    </picture>
+
+    <p class="place">Kos, Greece</p>
+
+    <p class="tagline">Something is fermenting&hellip;</p>
+
+    <p class="message">Our new website is on its way. Please check back soon.</p>
+    <p class="message-el" lang="el">Ο νέος μας ιστότοπος έρχεται σύντομα.</p>
+
+    <span class="eta">Expected online by January 2027</span>
+
+    <hr>
+
+    <p class="contact">
+      In the meantime, reach us at
+      <a href="tel:+302242068921">+30 2242 068921</a>
+    </p>
+
+    <footer>
+      Hatzinikolaou Winery · Platanaki O.E. · Kos, Greece
+    </footer>
+  </main>
+</body>
+</html>
