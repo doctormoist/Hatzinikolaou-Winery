@@ -331,7 +331,7 @@ section { padding: 92px 0; }
   color: rgba(255, 255, 255, 0.95);
 }
 
-.hero-list svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; }
+.hero-list .ico { font-size: 0.82rem; line-height: 1.5; flex-shrink: 0; }
 
 .hero-rule {
   width: 60px;
@@ -348,7 +348,7 @@ section { padding: 92px 0; }
 
 .video-toggle {
   position: absolute;
-  bottom: 118px;
+  bottom: calc(17vh + 92px);
   left: 50%;
   transform: translateX(-50%);
   background: none;
@@ -363,12 +363,12 @@ section { padding: 92px 0; }
 .video-toggle:hover { opacity: 0.7; }
 .video-toggle svg { width: 22px; height: 22px; }
 
-/* Booking bar */
+/* Booking bar — overlaps the video, which keeps running below it */
 .booking-bar {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 17vh;
   background: #fff;
   z-index: 4;
   padding: 14px 20px;
@@ -465,7 +465,8 @@ section { padding: 92px 0; }
 }
 
 /* ---------- Villa blocks ---------- */
-.villa-block { padding: 70px 0 40px; }
+/* padding-block, not the shorthand: these carry .container's side padding */
+.villa-block { padding-block: 70px 40px; }
 
 .villa-block .lede {
   font-size: 0.92rem;
@@ -1055,14 +1056,16 @@ section { padding: 92px 0; }
   .faq-grid.reverse .faq-media { order: 0; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 34px; }
   .services { grid-template-columns: 1fr; gap: 34px; }
-  .booking-bar { grid-template-columns: 1fr 1fr; }
-  .booking-bar .btn { grid-column: 1 / -1; }
 }
 
 @media (max-width: 720px) {
   section { padding: 64px 0; }
-  .header-phone { display: none; }
-  .hero { padding: 110px 18px 230px; }
+  .hero { padding: 110px 18px 34vh; }
+  .brand .mark { font-size: 1.24rem; }
+  .header-phone { font-size: 0.68rem; gap: 4px; }
+  .header-phone svg { width: 12px; height: 12px; }
+  .header-right { gap: 10px; }
+  .btn-white { padding: 8px 13px; font-size: 0.72rem; }
   .collage { min-height: 300px; }
   .collage .a, .collage .b { width: 72%; }
   .collage .b { bottom: -26px; }
@@ -1070,13 +1073,18 @@ section { padding: 92px 0; }
   .band-body { padding-left: 22px; }
   .footer-top { grid-template-columns: 1fr; }
   .gal-grid { gap: 10px; }
-  .video-toggle { bottom: 190px; }
+
+  /* stays a single row, as on the live site */
+  .booking-bar { padding: 10px 12px; gap: 7px; }
+  .bf label { font-size: 0.46rem; letter-spacing: 0.12em; margin-bottom: 3px; }
+  .bf select, .bf input { padding: 6px 5px; font-size: 0.62rem; }
+  .booking-bar .btn { padding: 8px 9px; font-size: 0.52rem; letter-spacing: 0.08em; }
+  .video-toggle { bottom: calc(17vh + 76px); }
 }
 
-@media (max-width: 420px) {
-  .booking-bar { grid-template-columns: 1fr; gap: 10px; padding: 14px 16px; }
-  .hero { padding-bottom: 330px; }
-  .video-toggle { bottom: 290px; }
+@media (max-width: 400px) {
+  .bf select, .bf input { padding: 6px 3px; font-size: 0.55rem; }
+  .booking-bar { gap: 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
