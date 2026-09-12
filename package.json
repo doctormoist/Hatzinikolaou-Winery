@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:offline": "vite build && node scripts/inline-assets.mjs"
+    "build:offline": "vite build && node scripts/inline-assets.mjs",
+    "build:single": "node scripts/make-embeds.mjs && node scripts/build-single-file.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.4",
