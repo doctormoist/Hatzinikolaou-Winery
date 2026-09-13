@@ -16,9 +16,9 @@
   --line: #e7ddd2;
   --max-width: 880px;
 
-  --display: "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
-  --serif: "Cormorant Garamond", Georgia, "Palatino Linotype", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --body: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -39,7 +39,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--body);
   font-size: 1.15rem;
   line-height: 1.65;
   overflow-x: hidden;
@@ -291,7 +291,7 @@ img {
 
 .band__headline {
   font-family: var(--display);
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
   font-size: clamp(1.9rem, 4.6vw, 3.1rem);
   line-height: 1.22;
@@ -355,7 +355,7 @@ img {
   font-family: var(--display);
   font-size: clamp(2.4rem, 6vw, 3.6rem);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0 0 12px;
 }
 
@@ -437,7 +437,7 @@ img {
   display: block;
   font-family: var(--display);
   font-size: clamp(2.1rem, 4.5vw, 2.9rem);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--gold-light);
   line-height: 1;
   margin-bottom: 8px;
@@ -475,7 +475,7 @@ main {
   font-family: var(--display);
   font-size: 1.7rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--purple);
   margin: 2.2em 0 0.6em;
 }
@@ -501,7 +501,7 @@ main {
   position: relative;
   font-family: var(--display);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.5;
   color: var(--purple);
@@ -618,7 +618,7 @@ main {
   font-family: var(--display);
   font-size: 1.5rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--purple);
 }
 
@@ -689,7 +689,7 @@ main {
   font-family: var(--display);
   font-size: 1.9rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--purple);
 }
 

@@ -58,21 +58,29 @@ Status: **chosen, not yet built.** See §10 for how this was decided.
 
 ## 3. Typography
 
-- **Display/heading face:** Bodoni Moda (kept from the current build)
-- **Body face:** Cormorant Garamond (kept from the current build)
-- **Pairing rationale:** Both are already real, working infrastructure —
-  every page currently loads and uses this pairing — and Bodoni Moda's
-  high-contrast serif was originally chosen to echo the real Black Lady
-  bottle's gold serif label typography, a genuine brand tie, not a generic
-  choice. The user's feedback that prompted this whole exercise was about
-  *backgrounds and decoration*, not typography, so this direction keeps
-  type as-is rather than re-litigating something that wasn't flagged as a
-  problem.
-- **Open tension to watch:** Bodoni Moda is a Didone display face with
-  upscale/fashion-editorial connotations, which sits in some tension with
-  the brand's explicit "not upscale" commitment. Not changing it now — but
-  if the rebuilt site still reads as more formal than intended once real
-  content is in place, revisit this pairing before shipping.
+- **Display/heading face:** Instrument Serif (italic used for most
+  headline treatments, matching the italic convention already established
+  site-wide)
+- **Body face:** Karla
+- **Pairing rationale:** Bodoni Moda read polished but safe — closer to a
+  fashion label than a family that waves you in for a free tasting — and
+  was flagged as an open tension against the "not upscale" brand
+  commitment (see prior log entry below). Instrument Serif's slightly
+  irregular italic has real character without tipping into costume the way
+  a decorative script would, and sits closer to "warm and casual." Karla is
+  a humanist sans that reads friendly and legible at body-text sizes,
+  reinforcing the same shift away from formal/editorial. Explored as one of
+  four options in a dedicated type pitch (Yeseva One/Vollkorn, Instrument
+  Serif/Karla, IM Fell English/Source Serif 4, Bricolage Grotesque/Karla)
+  before this pick.
+- **Multiple fonts across the site:** Considered and confirmed against how
+  real premium wineries actually do this — a tight system of 2–3 font
+  *roles* (display, body, occasional accent) used consistently everywhere,
+  not a different typeface identity per page. Site-wide, that's just
+  Instrument Serif + Karla. The one controlled exception under discussion
+  is reserving IM Fell English *only* for the History page as a deliberate
+  one-page tonal shift for the Tony/Black Lady story — not yet approved,
+  flag before using.
 - **Scale/hierarchy approach:** Oversized italic display headlines for
   section openers (kept from current build); one real family quote (about
   hosting drop-ins, or Kanello) set oversized across a full-bleed moment as
@@ -189,3 +197,4 @@ Status: **chosen, not yet built.** See §10 for how this was decided.
 | 2026-09-13 | Proposed three directions (Horafa Survey, The Long Table, The Black Lady) per art-direction skill §7 | Replace the flat color-blocked sections, repeated squiggle SVGs, and floating circles the owner flagged as generic |
 | 2026-09-13 | Owner chose The Long Table, with purple and green as the main colors instead of the originally-pitched terracotta palette | Purple/green are the real, confirmed brand colors (logo + vine/olive world); owner's explicit request |
 | 2026-09-13 | Kept existing typography (Bodoni Moda / Cormorant Garamond) rather than switching to the Piazzolla/Karla pairing from the original pitch | Already real working infrastructure with a genuine brand tie (Black Lady label); the owner's feedback was about backgrounds/decoration, not type |
+| 2026-09-13 | Owner asked to explore fonts with more character; pitched 4 options and swapped display/body to Instrument Serif / Karla site-wide | Bodoni Moda read too polished/upscale against the "not upscale" brand tone; Instrument Serif has real personality without going decorative |
