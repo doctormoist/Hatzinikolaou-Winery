@@ -1,3 +1,5 @@
 # Impeccable engine binary — platform-specific, re-downloaded by
 # `npx impeccable install` / on first run. Not portable across OS/arch.
 .claude/skills/impeccable/scripts/bin/
+__pycache__/
+*.pyc

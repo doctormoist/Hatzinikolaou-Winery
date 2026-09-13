@@ -327,59 +327,63 @@ def nutrition_page(slug, name, lot, composition, certifications, vines, yield_, 
       </table>
       <p class="footnote">Different LOT numbers denote different bottling batches. The year of harvest is written on the front label. The first two digits of the LOT number denote the year of bottling (usually one to two years after harvest); the last two digits denote the batch number, and usually make no difference to taste &mdash; different batches can come from the same barrel.</p>
     </div>'''
-    return shell(None, f"{name} — Nutritional & Technical Information", f"Production and technical specifications for {name}, Hatzinikolaou Winery. Full nutritional information pending lab results.", body)
+    title = f"{name} — Nutritional & Technical Information"
+    description = f"Production and technical specifications for {name}, Hatzinikolaou Winery. Full nutritional information pending lab results."
+    return title, description, body
 
 
-write("nutrition-asfendiano.html", nutrition_page(
-    "asfendiano", "Asfendiano", "A2201",
-    "60% Merlot, 30% Syrah, 10% Black Lady",
-    "Certified Natural Wine",
-    "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
-    "400kg / 1,000m&sup2;",
-    "Mid-August (10th&ndash;20th) for Syrah; early September (1st&ndash;5th) for Cabernet Sauvignon.",
-    "Boiled must. No added sugar. No sulphides.",
-    "6 months in stainless steel tanks, then 6 months in bottle with natural ageing corks. Traditionally drunk at Christmas, or chilled in summer.",
-    "Up to 5 years maximum",
-    "13%",
-))
+NUTRITION_PAGES = [
+    ("nutrition-asfendiano.html", nutrition_page(
+        "asfendiano", "Asfendiano", "A2201",
+        "60% Merlot, 30% Syrah, 10% Black Lady",
+        "Certified Natural Wine",
+        "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
+        "400kg / 1,000m&sup2;",
+        "Mid-August (10th&ndash;20th) for Syrah; early September (1st&ndash;5th) for Cabernet Sauvignon.",
+        "Boiled must. No added sugar. No sulphides.",
+        "6 months in stainless steel tanks, then 6 months in bottle with natural ageing corks. Traditionally drunk at Christmas, or chilled in summer.",
+        "Up to 5 years maximum",
+        "13%",
+    )),
+    ("nutrition-black-lady.html", nutrition_page(
+        "black-lady", "Black Lady", "B1801",
+        "100% Mavrothyliko (Black Lady)",
+        "PGI Dodecanese, Certified Natural Wine",
+        "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
+        "300kg / 1,000m&sup2;",
+        "End of August (25th&ndash;30th).",
+        "",
+        "6&ndash;12 months in stainless steel tanks, 24&ndash;36 months in oak barrels, then at least another year in bottle with natural ageing corks. Hits the market around 5 years after harvest, and reaches its peak around age 10.",
+        "Up to 20 years",
+        "13%",
+    )),
+    ("nutrition-platanaki-red.html", nutrition_page(
+        "platanaki-red", "Platanaki Red", "P2101",
+        "60% Mavrothyliko (Black Lady), 20% Syrah, 20% Merlot",
+        "PGI Kos, PGI Dodecanese, Certified Natural Wine",
+        "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
+        "500kg / 1,000m&sup2;",
+        "1st&ndash;10th August for Merlot; mid-August (10th&ndash;20th) for Syrah; end of August (25th&ndash;30th) for Black Lady.",
+        "",
+        "3&ndash;6 months in stainless steel tanks, 6&ndash;18 months in oak barrels, then at least another year in bottle with natural ageing corks. Hits the market around 3 years after harvest, and reaches its peak around age 7.",
+        "Up to 10 years",
+        "13%",
+    )),
+    ("nutrition-platanaki-pink.html", nutrition_page(
+        "platanaki-pink", "Platanaki Pink", "R2401",
+        "50% Syrah, 50% Cabernet Sauvignon",
+        "PGI Kos, Certified Natural Wine",
+        "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
+        "400kg / 1,000m&sup2;",
+        "Mid-August (10th&ndash;20th) for Syrah; early September (1st&ndash;5th) for Cabernet Sauvignon.",
+        "",
+        "6 months in stainless steel tanks, then 6 months in bottle with natural ageing corks. Our only filtered wine, and not meant to be aged &mdash; we recommend drinking it within 2&ndash;3 years of bottling.",
+        "Up to 5 years maximum",
+        "13%",
+    )),
+]
 
-write("nutrition-black-lady.html", nutrition_page(
-    "black-lady", "Black Lady", "B1801",
-    "100% Mavrothyliko (Black Lady)",
-    "PGI Dodecanese, Certified Natural Wine",
-    "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
-    "300kg / 1,000m&sup2;",
-    "End of August (25th&ndash;30th).",
-    "",
-    "6&ndash;12 months in stainless steel tanks, 24&ndash;36 months in oak barrels, then at least another year in bottle with natural ageing corks. Hits the market around 5 years after harvest, and reaches its peak around age 10.",
-    "Up to 20 years",
-    "13%",
-))
-
-write("nutrition-platanaki-red.html", nutrition_page(
-    "platanaki-red", "Platanaki Red", "P2101",
-    "60% Mavrothyliko (Black Lady), 20% Syrah, 20% Merlot",
-    "PGI Kos, PGI Dodecanese, Certified Natural Wine",
-    "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
-    "500kg / 1,000m&sup2;",
-    "1st&ndash;10th August for Merlot; mid-August (10th&ndash;20th) for Syrah; end of August (25th&ndash;30th) for Black Lady.",
-    "",
-    "3&ndash;6 months in stainless steel tanks, 6&ndash;18 months in oak barrels, then at least another year in bottle with natural ageing corks. Hits the market around 3 years after harvest, and reaches its peak around age 7.",
-    "Up to 10 years",
-    "13%",
-))
-
-write("nutrition-platanaki-pink.html", nutrition_page(
-    "platanaki-pink", "Platanaki Pink", "R2401",
-    "50% Syrah, 50% Cabernet Sauvignon",
-    "PGI Kos, Certified Natural Wine",
-    "17-year-old vines on limestone, ~300m elevation. Unwatered grapes, minimum intervention.",
-    "400kg / 1,000m&sup2;",
-    "Mid-August (10th&ndash;20th) for Syrah; early September (1st&ndash;5th) for Cabernet Sauvignon.",
-    "",
-    "6 months in stainless steel tanks, then 6 months in bottle with natural ageing corks. Our only filtered wine, and not meant to be aged &mdash; we recommend drinking it within 2&ndash;3 years of bottling.",
-    "Up to 5 years maximum",
-    "13%",
-))
+for fname, (n_title, n_desc, n_body) in NUTRITION_PAGES:
+    write(fname, shell(None, n_title, n_desc, n_body))
 
 print("done")
