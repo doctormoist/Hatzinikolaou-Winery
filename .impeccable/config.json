@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T23:32:07.992Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10 (2026-09-13), not acted on unilaterally since it was a separate prior decision"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T23:32:08.002Z",
+        "reason": "Winery's real, established brand ground (--cream/--paper), documented in DESIGN-DIRECTION.md §4 as already-established, paired with the real logo purple — not a generic default"
+      }
+    ]
+  }
+}
