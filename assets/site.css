@@ -154,6 +154,10 @@ img {
 
 .nav-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
   font-family: var(--sans);
   font-size: 0.95rem;
   font-weight: 600;
@@ -161,7 +165,7 @@ img {
   background: none;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
@@ -217,7 +221,7 @@ img {
 
 @media (max-width: 760px) {
   .nav-toggle {
-    display: inline-block;
+    display: inline-flex;
   }
 
   .site-nav {
