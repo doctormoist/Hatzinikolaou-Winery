@@ -11,6 +11,15 @@ design, build, and verify the site itself.
 This is a real, professional website for a real family business, not a demo
 or a placeholder. Design and code to that standard on every change:
 
+- **Run the `art-direction` skill (`.claude/skills/art-direction/`) before
+  writing production UI for a new surface, and before any substantial
+  redesign.** This is mandatory, not optional — it is how the requirements
+  below actually get enforced, rather than re-litigated from scratch (and
+  re-drifted into generic decoration) every session. For a new site or a
+  substantial redesign, that means proposing three genuinely different
+  visual directions and getting a decision before building (skill §7). Run
+  its §11 visual review pass on any page after building it, and keep
+  `DESIGN-DIRECTION.md` in sync with what's actually shipped.
 - **Never produce generic AI-looking web design.** If a layout, section, or
   component would look at home in any startup landing page template
   regardless of the business behind it, it is wrong for this site. Every
@@ -26,16 +35,23 @@ or a placeholder. Design and code to that standard on every change:
   - Purple-to-blue gradients (or any generic SaaS gradient) used as a crutch
   - Excessive glassmorphism / frosted blur panels
   - Meaningless decorative blobs or abstract shapes with no relation to the
-    brand
+    brand — this includes generic circles, squiggly/wave lines, floating
+    dots, and repeated decorative SVG patterns used to fill empty space;
+    see the `art-direction` skill §1–2 for what's allowed instead
+    (decoration derived from the actual brand/place/history) and how to
+    select it
   - Excessive pill-shaped buttons/badges used everywhere by default
   - Generic icon-in-a-circle feature grids ("3 icons, 3 headlines, 3
     one-liners") used as a default section pattern
   - Unnecessary drop shadows applied uniformly instead of purposefully
   - Repetitive, interchangeable sections that could belong to any business
+    — see `art-direction` skill §6 for varying section composition
+    archetypes instead of repeating "colored background → centered heading
+    → paragraph → cards"
 - **Treat mobile design as a first-class design**, not a squeeze of the
   desktop layout. Design mobile compositions deliberately — hierarchy,
   spacing, and imagery choices can and should differ from desktop, not just
-  reflow into a single column.
+  reflow into a single column. See `art-direction` skill §9.
 
 ## 2. Required testing on every substantial change
 
@@ -89,6 +105,10 @@ or a placeholder. Design and code to that standard on every change:
   questions, and current build status. Do not invent facts (hours, prices,
   wine details, awards, etc.) that aren't confirmed there — flag them as
   open questions instead.
+- `DESIGN-DIRECTION.md` — the chosen visual direction, motifs, typography,
+  color, imagery, and layout system, and the reasoning behind them. Read
+  it before touching visual design; keep it updated when the direction
+  changes (see `art-direction` skill).
 - The full build (multi-page, bilingual EL/EN/DE, wine catalog, etc.) is
   currently on hold pending the owner's story, photos, and final content —
   check current repo state and recent commit history before assuming what
