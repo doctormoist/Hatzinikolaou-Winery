@@ -1,0 +1,519 @@
+/* Hatzinikolaou Winery — shared design system */
+
+:root {
+  --purple: #4a2545;
+  --purple-deep: #341a30;
+  --green: #4c6b3f;
+  --green-deep: #34492b;
+  --gold: #b98b3e;
+  --cream: #f8f1e4;
+  --paper: #fffdf9;
+  --ink: #2a2126;
+  --ink-soft: #5a5058;
+  --line: #e7ddd2;
+  --max-width: 880px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, "Palatino Linotype", serif;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--purple);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.ui {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--purple);
+  color: #fff;
+  padding: 10px 16px;
+  z-index: 100;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-header__bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.site-header__brand img {
+  height: 42px;
+  width: auto;
+}
+
+.nav-toggle {
+  display: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--purple);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--cream);
+  color: var(--purple);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--purple);
+  border-bottom: 2px solid var(--gold);
+  border-radius: 6px 6px 0 0;
+}
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    padding: 4px 0 12px;
+  }
+
+  .site-nav a {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-header__bar {
+    flex-wrap: wrap;
+  }
+
+  .site-header.nav-open .site-nav {
+    display: flex;
+  }
+}
+
+/* ---------- Hero / page header ---------- */
+
+.page-hero {
+  padding: 56px 20px 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  color: var(--purple);
+  margin: 0 0 10px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.page-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+.home-hero {
+  padding: 64px 20px 48px;
+  text-align: center;
+}
+
+.home-hero img.brand-logo {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.home-hero .place {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--green-deep);
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.home-hero .lede {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--purple);
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+.container--wide {
+  max-width: 1100px;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+  color: var(--purple);
+  margin: 2.2em 0 0.6em;
+  font-style: italic;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin: 0 0 1.1em;
+}
+
+.prose ul {
+  margin: 0 0 1.4em;
+  padding-left: 1.3em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.pull-note {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--gold);
+  padding: 4px 0 4px 16px;
+  margin: 1.6em 0;
+}
+
+/* ---------- Photo placeholder ---------- */
+
+.photo-placeholder {
+  border: 1.5px dashed var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 48px 20px;
+  margin: 1.8em 0;
+}
+
+.photo-placeholder svg {
+  width: 34px;
+  height: 34px;
+  color: var(--gold);
+  margin: 0 auto 10px;
+}
+
+/* ---------- Section index (home page) ---------- */
+
+.section-index {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 20px 64px;
+}
+
+.section-index__item {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-index__item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.section-index__num {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 1.6em;
+}
+
+.section-index__body h2 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  color: var(--purple);
+  font-style: italic;
+}
+
+.section-index__body p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.section-index__item:hover h2,
+.section-index__item:focus-visible h2 {
+  text-decoration: underline;
+}
+
+/* ---------- Wine list ---------- */
+
+.wine {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 28px 26px;
+  margin-bottom: 28px;
+  background: var(--paper);
+}
+
+.wine__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.wine__head h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--purple);
+  font-style: italic;
+}
+
+.wine__price {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  color: var(--green-deep);
+  font-size: 1.05rem;
+}
+
+.wine__meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+}
+
+.wine__body p {
+  margin: 0 0 0.8em;
+}
+
+.wine__nutrition-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--purple-deep);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--purple);
+  border: 1.5px solid var(--purple);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ---------- Notice / provisional banner ---------- */
+
+.notice {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  padding: 14px 18px;
+  border-radius: 4px;
+  margin: 0 0 28px;
+}
+
+/* ---------- Spec table (nutrition pages) ---------- */
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  margin: 0 0 1.6em;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.spec-table th,
+.spec-table td {
+  text-align: left;
+  padding: 12px 10px;
+  vertical-align: top;
+}
+
+.spec-table th {
+  width: 38%;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.footnote {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.site-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+}
+
+.site-footer a:hover {
+  color: var(--purple);
+}
+
+.site-footer__brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  color: var(--purple);
+  font-size: 1.2rem;
+}
+
+.site-footer__legal {
+  font-size: 0.78rem;
+  color: #a5977f;
+}
