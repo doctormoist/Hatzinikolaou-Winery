@@ -193,11 +193,11 @@ stats_band = f'''    <section class="band band--green">
       <div class="reveal" style="position:relative;z-index:1">
         <p class="band__eyebrow" style="text-align:center">By the numbers</p>
         <div class="stats">
-          <div class="stat"><span class="stat__number" data-target="2013">0</span><span class="stat__label">Founded</span></div>
-          <div class="stat"><span class="stat__number" data-target="7">0</span><span class="stat__label">Hectares at Horafa</span></div>
-          <div class="stat"><span class="stat__number" data-target="6,000+">0</span><span class="stat__label">Black Lady vines</span></div>
-          <div class="stat"><span class="stat__number" data-target="20yr">0</span><span class="stat__label">Cork ageing potential</span></div>
-          <div class="stat"><span class="stat__number" data-target="4.9&#9733;">0</span><span class="stat__label">Google rating, 79 reviews</span></div>
+          <div class="stat"><span class="stat__number" data-target="2013">2013</span><span class="stat__label">Founded</span></div>
+          <div class="stat"><span class="stat__number" data-target="7">7</span><span class="stat__label">Hectares at Horafa</span></div>
+          <div class="stat"><span class="stat__number" data-target="6,000+">6,000+</span><span class="stat__label">Black Lady vines</span></div>
+          <div class="stat"><span class="stat__number" data-target="20yr">20yr</span><span class="stat__label">Cork ageing potential</span></div>
+          <div class="stat"><span class="stat__number" data-target="4.9&#9733;">4.9&#9733;</span><span class="stat__label">Google rating, 79 reviews</span></div>
         </div>
       </div>
     </section>'''

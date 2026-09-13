@@ -10,12 +10,14 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Scroll-reveal
+  // Scroll-reveal. Elements are visible by default in CSS (no .reveal-pending
+  // class); we only opt them into the hidden pre-animation state here, once
+  // we know we can actually reveal them again. If anything below fails partway
+  // or the observer never fires, the timeout guarantees content still appears.
   var revealEls = document.querySelectorAll('.reveal');
-  if (revealEls.length) {
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-    } else {
+  if (revealEls.length && !reduceMotion && 'IntersectionObserver' in window) {
+    try {
+      revealEls.forEach(function (el) { el.classList.add('reveal-pending'); });
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -25,6 +27,16 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
       revealEls.forEach(function (el) { io.observe(el); });
+
+      // Safety net: if the observer never fires for some elements (odd
+      // viewport/embedding contexts), force them visible after a few seconds
+      // rather than leaving content permanently hidden.
+      setTimeout(function () {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        io.disconnect();
+      }, 3000);
+    } catch (e) {
+      revealEls.forEach(function (el) { el.classList.remove('reveal-pending'); });
     }
   }
 
@@ -55,15 +67,28 @@
     if (!('IntersectionObserver' in window)) {
       statEls.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
     } else {
-      var statIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            statIo.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.4 });
-      statEls.forEach(function (el) { statIo.observe(el); });
+      try {
+        var statIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              statIo.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        statEls.forEach(function (el) { statIo.observe(el); });
+
+        // Safety net: never leave a stat stuck at "0" if the observer
+        // doesn't fire for some reason.
+        setTimeout(function () {
+          statEls.forEach(function (el) {
+            if (el.textContent === '0') el.textContent = el.getAttribute('data-target');
+          });
+          statIo.disconnect();
+        }, 3000);
+      } catch (e) {
+        statEls.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
+      }
     }
   }
 })();
