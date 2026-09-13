@@ -159,24 +159,24 @@ def write(path, content):
 # ---------------------------------------------------------------- HOME
 
 sections = [
-    ("philosophy.html", "Our Philosophy", "Minimum intervention, wild fermentation, and grapes we never water."),
-    ("history.html", "History", "How our grandfather Tony saved the Black Lady grape from extinction."),
-    ("geography.html", "Geography", "Horafa: a windswept hillside vineyard on Mount Dikaios."),
-    ("ecology.html", "Biology &amp; Ecology", "Four grape varieties, zero waste, and a vineyard shared with hares, peacocks, and our horse Kanello."),
-    ("wines.html", "Wines", "Platanaki Pink, Platanaki Red, Black Lady, and Asfendiano."),
-    ("eshop.html", "Eshop", "Order directly from us &mdash; we currently ship across the EU."),
-    ("contact.html", "Contact", "Find us on the road between Kos Town and Zipari."),
+    ("philosophy.html", "Our Philosophy", "Minimum intervention, wild fermentation, and grapes we never water.", "Photo representing our philosophy in the vineyard", False),
+    ("history.html", "History", "How our grandfather Tony saved the Black Lady grape from extinction.", "Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou", True),
+    ("geography.html", "Geography", "Horafa: a windswept hillside vineyard on Mount Dikaios.", "Photo of the Horafa vineyard hillside", False),
+    ("ecology.html", "Biology &amp; Ecology", "Four grape varieties, zero waste, and a vineyard shared with hares, peacocks, and our horse Kanello.", "Photo of vineyard wildlife", False),
+    ("wines.html", "Wines", "Platanaki Pink, Platanaki Red, Black Lady, and Asfendiano.", "Photo of the four wine bottles together", True),
+    ("eshop.html", "Eshop", "Order directly from us &mdash; we currently ship across the EU.", "Photo of a wine order ready to ship", False),
+    ("contact.html", "Contact", "Find us on the road between Kos Town and Zipari.", "Photo of the tasting area &amp; courtyard", True),
 ]
 
 section_index_html = "\n".join(
-    f'''      <a class="section-index__item" href="{href}">
-        <span class="section-index__num ui">0{i}</span>
-        <span class="section-index__body">
+    f'''      <a class="explore-tile{' explore-tile--featured' if featured else ''} reveal" href="{href}">
+        <span class="explore-tile__media">{PHOTO_ICON}<span>{photo_label} &mdash; coming soon</span></span>
+        <span class="explore-tile__body">
           <h2>{label}</h2>
           <p>{teaser}</p>
         </span>
       </a>'''
-    for i, (href, label, teaser) in enumerate(sections, start=1)
+    for i, (href, label, teaser, photo_label, featured) in enumerate(sections, start=1)
 )
 
 legacy_band = band(
@@ -225,7 +225,7 @@ home_body = f'''    <div class="home-hero">
 {legacy_band}
 {stats_band}
     <div class="container">
-      <nav class="section-index" aria-label="Site sections">
+      <nav class="explore-grid" aria-label="Site sections">
 {section_index_html}
       </nav>
     </div>
