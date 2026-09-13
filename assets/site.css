@@ -249,106 +249,323 @@ img {
   }
 }
 
-/* ---------- Color-blocked sections ---------- */
+/* ---------- Motifs (see DESIGN-DIRECTION.md §2) ---------- */
 
-.band {
+/* A hand-tied twine line, from real bottle labeling. Replaces a
+   decorative squiggle as the small divider mark under the wordmark and
+   above page-hero headlines. */
+.twine-divider {
+  display: block;
+  width: 108px;
+  height: 18px;
+  margin: 0 auto 22px;
+  color: var(--gold);
+}
+
+/* A simple olive branch, from the real olive oil used to seal the wine.
+   Used as a small accent near Philosophy/Ecology content and on the
+   closing invitation. */
+.olive-branch {
+  display: block;
+  margin: 0 auto;
+  width: 64px;
+  height: 32px;
+  color: var(--green);
+}
+
+/* A single meandering vine cane with two leaf sprigs, used once, only on
+   the History page. */
+.vine-cane {
+  display: block;
+  width: 180px;
+  height: 40px;
+  margin: 0 0 18px;
+  color: var(--gold);
+}
+
+/* A small horse mark for Kanello, the family's real pet horse. Used once,
+   sparingly, on the Ecology page. */
+.kanello-mark {
+  display: block;
+  width: 46px;
+  height: 46px;
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+/* Thin converging lines suggesting rows of vines in perspective, from the
+   real planted rows at Horafa. A low-opacity full-bleed backdrop, never a
+   foreground decoration. */
+.vine-rows-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--green);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.vine-rows-bg--on-color {
+  color: #fff;
+  opacity: 0.14;
+}
+
+/* A repeating barrel-tile silhouette, from real regional roof architecture,
+   used instead of a straight or wavy section edge. */
+.roof-edge {
+  height: 16px;
+  background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--edge-color, var(--purple)) 9.5px);
+  background-size: 20px 16px;
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+.roof-edge--top {
+  transform: scaleY(-1);
+}
+
+/* ---------- Asymmetric invitation split (home) ---------- */
+
+.invite-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.invite-split__media {
+  min-height: 320px;
+}
+
+.invite-split__media .photo-placeholder {
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.invite-split__body {
+  padding: 48px clamp(20px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.invite-split__eyebrow {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 14px;
+}
+
+.invite-split__headline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+  color: var(--purple);
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+
+.invite-split__facts {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.invite-split__facts li {
+  padding-left: 1.3em;
   position: relative;
-  padding: 76px 20px;
+  margin-bottom: 6px;
+}
+
+.invite-split__facts li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+@media (max-width: 820px) {
+  .invite-split {
+    grid-template-columns: 1fr;
+  }
+  .invite-split__media {
+    min-height: 240px;
+  }
+}
+
+/* ---------- Quote moment ---------- */
+
+.quote-moment {
+  position: relative;
   overflow: hidden;
-}
-
-.band--purple {
-  background: linear-gradient(155deg, var(--purple) 0%, var(--purple-deep) 100%);
-  color: #fbf3f9;
-}
-
-.band--green {
+  padding: 72px 20px;
   background: linear-gradient(155deg, var(--green) 0%, var(--green-deep) 100%);
   color: #f4f8ee;
 }
 
-.band__inner {
+.quote-moment__inner {
   position: relative;
-  max-width: 760px;
+  z-index: 1;
+  max-width: 780px;
   margin: 0 auto;
   text-align: center;
-  z-index: 1;
 }
 
-.band__eyebrow {
+.quote-moment__eyebrow {
   font-family: var(--sans);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: var(--gold-light);
+  color: #f0e4b0;
   margin: 0 0 18px;
 }
 
-.band--green .band__eyebrow {
-  color: #f0e4b0;
-}
-
-.band__headline {
+.quote-moment__text {
   font-family: var(--display);
-  font-weight: 400;
   font-style: italic;
-  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
-  line-height: 1.22;
-  margin: 0 0 22px;
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+  line-height: 1.25;
+  margin: 0;
 }
 
-.band__lede {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  opacity: 0.92;
+.stat-strip {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 36px;
+}
+
+.stat-strip__item {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.stat-strip__item strong {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #f0e4b0;
+  margin-right: 6px;
+}
+
+/* ---------- Closing invitation ---------- */
+
+.invite-close {
+  position: relative;
+  overflow: hidden;
+  --edge-color: var(--purple);
+  padding: 64px 20px 72px;
+  background: linear-gradient(155deg, var(--purple) 0%, var(--purple-deep) 100%);
+  color: #fbf3f9;
+  text-align: center;
+}
+
+.invite-close__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
   margin: 0 auto;
-  max-width: 620px;
 }
 
-.band .vine-divider path {
-  stroke: rgba(255, 255, 255, 0.35);
+.invite-close .olive-branch {
+  margin: 0 auto 18px;
+  color: var(--gold-light);
 }
 
-/* Decorative vine accent, absolute-positioned within a .band */
-.band__vine {
-  position: absolute;
-  opacity: 0.16;
-  color: #fff;
-  pointer-events: none;
+.invite-close__headline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.9rem, 4.4vw, 2.7rem);
+  margin: 0 0 16px;
 }
 
-.band__vine--left {
-  left: -40px;
-  top: -30px;
-  width: 220px;
-  height: 340px;
-  transform: rotate(-8deg);
-}
-
-.band__vine--right {
-  right: -50px;
-  bottom: -40px;
-  width: 220px;
-  height: 340px;
-  transform: rotate(175deg);
-}
-
-/* ---------- Vine divider ---------- */
-
-.vine-divider {
-  display: block;
-  width: 120px;
-  height: 28px;
+.invite-close__lede {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  opacity: 0.92;
   margin: 0 auto 26px;
-  color: var(--gold);
+  max-width: 560px;
 }
 
-/* ---------- Hero / page header ---------- */
+/* ---------- Fact strip (Geography / Ecology) ---------- */
+
+.fact-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px 8px;
+}
+
+.fact-strip__item {
+  border-top: 2px solid var(--gold);
+  padding-top: 10px;
+}
+
+.fact-strip__value {
+  display: block;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--purple);
+}
+
+.fact-strip__label {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+/* ---------- History: framed editorial treatment ---------- */
+
+.history-frame {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 44px clamp(20px, 5vw, 56px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+/* ---------- Hero / page header ----------
+   Quiet and editorial: color lives in the headline text, not a full-bleed
+   fill, with a faint vine-row backdrop instead of a decorative icon. */
 
 .page-hero {
-  padding: 68px 20px 56px;
+  position: relative;
+  overflow: hidden;
+  padding: 72px 20px 60px;
   text-align: center;
+  background: var(--cream);
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -363,27 +580,21 @@ img {
   max-width: 620px;
   margin: 0 auto;
   font-size: 1.2rem;
+  color: var(--ink-soft);
 }
 
-.page-hero--purple {
-  background: linear-gradient(155deg, var(--purple) 0%, var(--purple-deep) 100%);
-  color: #fbf3f9;
+.page-hero--purple h1 {
+  color: var(--purple);
 }
 
-.page-hero--green {
-  background: linear-gradient(155deg, var(--green) 0%, var(--green-deep) 100%);
-  color: #f4f8ee;
-}
-
-.page-hero--purple .vine-divider,
-.page-hero--green .vine-divider {
-  color: var(--gold-light);
+.page-hero--green h1 {
+  color: var(--green-deep);
 }
 
 .page-hero__lot {
   font-family: var(--sans);
   letter-spacing: 0.1em;
-  opacity: 0.85;
+  color: var(--ink-soft);
 }
 
 .home-hero {
@@ -414,41 +625,6 @@ img {
   font-size: 1.35rem;
   font-style: italic;
   color: var(--purple);
-}
-
-/* ---------- Stats band ---------- */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 28px 20px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat__number {
-  display: block;
-  font-family: var(--display);
-  font-size: clamp(2.1rem, 4.5vw, 2.9rem);
-  font-weight: 400;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat__label {
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.85;
 }
 
 /* ---------- Layout ---------- */
@@ -651,24 +827,38 @@ main {
   }
 }
 
-/* ---------- Wine list ---------- */
+/* ---------- Wine list: a long table, not a card grid ----------
+   One continuous list divided by hairlines, echoing an actual table
+   setting rather than a repeating card component. */
 
-.wine {
-  position: relative;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 32px 30px 28px;
-  margin-bottom: 30px;
-  background: var(--paper);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.wine-table {
+  max-width: 820px;
+  margin: 0 auto;
 }
 
-.wine:hover {
-  box-shadow: 0 18px 40px rgba(42, 33, 38, 0.1);
-  transform: translateY(-3px);
+.wine-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 28px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
 }
 
-.wine__head {
+.wine-row:first-child {
+  padding-top: 0;
+}
+
+.wine-row:last-child {
+  border-bottom: none;
+}
+
+.wine-row__media .photo-placeholder {
+  margin: 0;
+  padding: 16px 10px;
+}
+
+.wine-row__head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -676,15 +866,15 @@ main {
   gap: 8px 20px;
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(90deg, var(--purple), var(--gold) 65%, transparent) 1;
-  padding-bottom: 14px;
-  margin-bottom: 16px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-.wine:nth-child(even) .wine__head {
+.wine-row:nth-child(even) .wine-row__head {
   border-image: linear-gradient(90deg, var(--green), var(--gold) 65%, transparent) 1;
 }
 
-.wine__head h2 {
+.wine-row__head h2 {
   margin: 0;
   font-family: var(--display);
   font-size: 1.9rem;
@@ -693,30 +883,40 @@ main {
   color: var(--purple);
 }
 
-.wine__price {
+.wine-row__price {
   font-family: var(--sans);
   font-weight: 700;
   color: var(--green-deep);
   font-size: 1.15rem;
 }
 
-.wine__meta {
+.wine-row__meta {
   font-family: var(--sans);
   font-size: 0.88rem;
   color: var(--green-deep);
   font-weight: 600;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
-.wine__body p {
+.wine-row__body p {
   margin: 0 0 0.8em;
 }
 
-.wine__nutrition-link {
+.wine-row__nutrition-link {
   font-family: var(--sans);
   font-size: 0.85rem;
   display: inline-block;
   margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .wine-row {
+    grid-template-columns: 1fr;
+  }
+
+  .wine-row__media {
+    max-width: 160px;
+  }
 }
 
 /* ---------- Buttons ---------- */

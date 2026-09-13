@@ -9,7 +9,8 @@ This is a record of *decisions and rationale*, not a moodboard dump. Every
 section should be answerable in plain language, grounded in confirmed facts
 from `SITE-CONTENT-NOTES.md` — never invented history, imagery, or symbolism.
 
-Status: **chosen, not yet built.** See §10 for how this was decided.
+Status: **built.** Live across every page. See §10 for how this was decided
+and built.
 
 ---
 
@@ -46,15 +47,16 @@ Status: **chosen, not yet built.** See §10 for how this was decided.
 
 ## 2. Visual motifs
 
-| Motif | What it is | Where it comes from | How it appears on the site | Why it belongs to this brand |
+| Motif | What it is | Where it comes from | How it appears on the site | Status |
 |---|---|---|---|---|
-| Olive branch line | A simple line-drawn olive branch/leaf mark | The winery's own olive oil, used to seal the wine once ready | Small accent near Philosophy/Ecology content, in vine-green | Real, specific practice — not a generic botanical flourish |
-| Vine-row trellis lines | Thin perspective lines suggesting rows of vines | The real planted rows at Horafa (7 hectares, about half planted) | Subtle background linework under the hero and Geography sections, in green | Ties the green brand color to the actual vineyard, not an abstract "nature" motif |
-| Oak barrel stave grain | A woodgrain texture with visible stave seams | Real oak-barrel ageing (6–36 months depending on the wine) | Background texture on wine-specific sections/cards only | Materially accurate to how the wine is actually made |
-| Kanello mark | A small line-drawn horse silhouette | The family's real pet horse, who lives at the vineyard | Used once or twice, sparingly (e.g. near Ecology/wildlife content) | A real, specific, named detail — not a generic farm-animal icon |
-| Hand-tied twine divider | A short twine/string line with a small knot | Real bottle labeling process | Small section dividers in place of a decorative rule | References a real physical object on every real bottle |
-| Regional roof-tile edge | A repeating tile-profile silhouette instead of a straight or wavy section edge | Regional Kos architecture | Section transition edges, in purple or green (not literal terracotta) | Real regional building detail, not an abstract wave/blob shape |
-| Black Lady cluster mark | A small engraved-style grape-cluster mark, drawn to Mavrothilyko's real cluster shape | The family's signature grape | Used sparingly on the Wines page only | Connects to the winery's one most distinctive real asset without pulling the whole site into a darker register |
+| Olive branch line | A simple line-drawn olive branch/leaf mark | The winery's own olive oil, used to seal the wine once ready | Philosophy page (near the olive-oil detail) and the closing home-page invitation | Built |
+| Vine-row lines | Thin converging lines suggesting rows of vines in perspective | The real planted rows at Horafa (7 hectares, about half planted) | Low-opacity full-bleed backdrop on every page-hero and the home-page quote moment | Built |
+| Hand-tied twine divider | A short twine/string line with a small knot | Real bottle labeling process | Small divider under the wordmark and above every page-hero headline, replacing the old squiggle | Built |
+| Vine cane | A single meandering vine-cane line with two leaf sprigs | An actual grapevine cane | Used once, at the top of the History page's framed section | Built |
+| Kanello mark | A small line-drawn horse silhouette | The family's real pet horse, who lives at the vineyard | Once, beside the wildlife paragraph on the Ecology page | Built |
+| Regional roof-tile edge | A repeating barrel-tile silhouette (via CSS radial-gradient), not a straight or wavy edge | Regional Kos architecture | Bottom edge of the home page's closing invitation | Built |
+| Oak barrel stave grain | A woodgrain texture with visible stave seams | Real oak-barrel ageing (6–36 months depending on the wine) | — | Not yet built |
+| Black Lady cluster mark | A small engraved-style grape-cluster mark, drawn to Mavrothilyko's real cluster shape | The family's signature grape | — | Not yet built; considered for the Wines page |
 
 ## 3. Typography
 
@@ -198,3 +200,5 @@ Status: **chosen, not yet built.** See §10 for how this was decided.
 | 2026-09-13 | Owner chose The Long Table, with purple and green as the main colors instead of the originally-pitched terracotta palette | Purple/green are the real, confirmed brand colors (logo + vine/olive world); owner's explicit request |
 | 2026-09-13 | Kept existing typography (Bodoni Moda / Cormorant Garamond) rather than switching to the Piazzolla/Karla pairing from the original pitch | Already real working infrastructure with a genuine brand tie (Black Lady label); the owner's feedback was about backgrounds/decoration, not type |
 | 2026-09-13 | Owner asked to explore fonts with more character; pitched 4 options and swapped display/body to Instrument Serif / Karla site-wide | Bodoni Moda read too polished/upscale against the "not upscale" brand tone; Instrument Serif has real personality without going decorative |
+| 2026-09-13 | Owner flagged that the font swap alone hadn't actually changed the site's structure — the old flat purple/green bands and circle-and-squiggle vine SVGs were still live. Rebuilt every page: removed `.band`/`VINE_TALL`/`VINE_DIVIDER` entirely; replaced with the motifs in §2 and the layout archetypes in §7 (asymmetric hero split, an oversized quote moment with an inline stat strip, a framed History section, fact strips on Geography/Ecology, and the Wines page as a continuous table list instead of a card grid) | Owner was right — documenting a direction is not the same as building it; the actual complaint (generic decoration) hadn't been addressed yet |
+| 2026-09-13 | `impeccable detect` flagged Instrument Serif itself as an increasingly overused face in AI-generated design (alongside Fraunces, Inter, etc.) | Not acted on unilaterally since the font was a separate, already-approved decision — flagged to the owner instead |

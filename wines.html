@@ -59,11 +59,20 @@
   </header>
   <main id="main">
     <div class="page-hero page-hero--purple">
-      <div class="reveal">
-        <svg class="vine-divider" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-  <path d="M2,14 C20,4 30,24 48,14 C62,6 58,22 60,14 C62,6 58,22 72,14 C90,24 100,4 118,14" stroke-linecap="round"/>
-  <circle cx="48" cy="14" r="2.6" fill="currentColor" stroke="none"/>
-  <circle cx="72" cy="14" r="2.6" fill="currentColor" stroke="none"/>
+      <svg class="vine-rows-bg" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M40 300 L140 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M160 300 L230 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M280 300 L320 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M400 300 L410 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M520 300 L500 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M640 300 L590 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M760 300 L680 0" stroke="currentColor" stroke-width="1"/>
+</svg>
+      <div class="page-hero__inner reveal">
+        <svg class="twine-divider" viewBox="0 0 120 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+  <path d="M4 10 C30 4 40 16 58 10" stroke-linecap="round"/>
+  <path d="M62 10 C80 4 90 16 116 10" stroke-linecap="round"/>
+  <path d="M56 6 C59 10 63 10 66 6 M56 14 C59 10 63 10 66 14" stroke-linecap="round"/>
 </svg>
         <h1>Wines</h1>
         
@@ -71,54 +80,64 @@
       </div>
     </div>
     <div class="container">
-      <article class="wine reveal">
-        <div class="wine__head">
-          <h2>Platanaki Pink</h2>
-          <span class="wine__price ui">&euro;14</span>
-        </div>
-        <p class="wine__meta">50% Cabernet Sauvignon, 50% Syrah &middot; 13% ABV</p>
-        <div class="wine__body">
+      <div class="wine-table">
+      <article class="wine-row reveal">
+        <div class="wine-row__media">
           <div class="photo-placeholder photo-placeholder--sm reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><div>Photo of the Platanaki Pink bottle &amp; label &mdash; coming soon</div></div>
+        </div>
+        <div class="wine-row__body">
+          <div class="wine-row__head">
+            <h2>Platanaki Pink</h2>
+            <span class="wine-row__price ui">&euro;14</span>
+          </div>
+          <p class="wine-row__meta">50% Cabernet Sauvignon, 50% Syrah &middot; 13% ABV</p>
           <p>A dry ros&eacute; wine, quite strong for the style, partly because the grapes are unwatered and partly because it is unfiltered. Best served chilled. Pairs well with chicken, pasta, salads, or even seafood.</p>
-          <a class="wine__nutrition-link" href="nutrition-platanaki-pink.html">Technical &amp; nutritional information &rarr;</a>
+          <a class="wine-row__nutrition-link" href="nutrition-platanaki-pink.html">Technical &amp; nutritional information &rarr;</a>
         </div>
       </article>
-      <article class="wine reveal">
-        <div class="wine__head">
-          <h2>Platanaki Red</h2>
-          <span class="wine__price ui">&euro;14</span>
-        </div>
-        <p class="wine__meta">At least 60% Black Lady, with Merlot and a little Syrah &middot; 13% ABV</p>
-        <div class="wine__body">
+      <article class="wine-row reveal">
+        <div class="wine-row__media">
           <div class="photo-placeholder photo-placeholder--sm reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><div>Photo of the Platanaki Red bottle &amp; label &mdash; coming soon</div></div>
+        </div>
+        <div class="wine-row__body">
+          <div class="wine-row__head">
+            <h2>Platanaki Red</h2>
+            <span class="wine-row__price ui">&euro;14</span>
+          </div>
+          <p class="wine-row__meta">At least 60% Black Lady, with Merlot and a little Syrah &middot; 13% ABV</p>
           <p>A well-balanced dry red. Goes great with red meat, but can be enjoyed with a variety of dishes, or on its own. Serve at 14&deg;C. A great value-for-money wine we highly recommend.</p>
-          <a class="wine__nutrition-link" href="nutrition-platanaki-red.html">Technical &amp; nutritional information &rarr;</a>
+          <a class="wine-row__nutrition-link" href="nutrition-platanaki-red.html">Technical &amp; nutritional information &rarr;</a>
         </div>
       </article>
-      <article class="wine reveal">
-        <div class="wine__head">
-          <h2>Black Lady</h2>
-          <span class="wine__price ui">&euro;29</span>
-        </div>
-        <p class="wine__meta">100% Black Lady grape &middot; 13% ABV</p>
-        <div class="wine__body">
+      <article class="wine-row reveal">
+        <div class="wine-row__media">
           <div class="photo-placeholder photo-placeholder--sm reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><div>Photo of the Black Lady bottle &amp; label &mdash; coming soon</div></div>
+        </div>
+        <div class="wine-row__body">
+          <div class="wine-row__head">
+            <h2>Black Lady</h2>
+            <span class="wine-row__price ui">&euro;29</span>
+          </div>
+          <p class="wine-row__meta">100% Black Lady grape &middot; 13% ABV</p>
           <p>A complex dry red with a rich aftertaste: a taste of history, made entirely from our own unique grape. Enjoy it on its own, or with heavier meat dishes, game, or cold cuts. Serve at 14&deg;C.</p>
-          <a class="wine__nutrition-link" href="nutrition-black-lady.html">Technical &amp; nutritional information &rarr;</a>
+          <a class="wine-row__nutrition-link" href="nutrition-black-lady.html">Technical &amp; nutritional information &rarr;</a>
         </div>
       </article>
-      <article class="wine reveal">
-        <div class="wine__head">
-          <h2>Asfendiano</h2>
-          <span class="wine__price ui">&euro;24</span>
-        </div>
-        <p class="wine__meta">Sweet dessert wine, no added sugar &middot; 13% ABV</p>
-        <div class="wine__body">
+      <article class="wine-row reveal">
+        <div class="wine-row__media">
           <div class="photo-placeholder photo-placeholder--sm reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><div>Photo of the Asfendiano bottle &amp; label &mdash; coming soon</div></div>
+        </div>
+        <div class="wine-row__body">
+          <div class="wine-row__head">
+            <h2>Asfendiano</h2>
+            <span class="wine-row__price ui">&euro;24</span>
+          </div>
+          <p class="wine-row__meta">Sweet dessert wine, no added sugar &middot; 13% ABV</p>
           <p>Made from 100% grapes, with no added sugar or sweetener. Its sweetness comes from boiling part of the must, which we call &ldquo;psimma.&rdquo; It tastes like caramel, and can be enjoyed chilled, warm, or even boiled as part of a Christmas Gl&uuml;hwein. It also works as a cocktail base, or paired with dark chocolate.</p>
-          <a class="wine__nutrition-link" href="nutrition-asfendiano.html">Technical &amp; nutritional information &rarr;</a>
+          <a class="wine-row__nutrition-link" href="nutrition-asfendiano.html">Technical &amp; nutritional information &rarr;</a>
         </div>
       </article>
+      </div>
     </div>
   </main>
   <footer class="site-footer">

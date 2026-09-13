@@ -22,18 +22,45 @@ NAV = [
 
 PHOTO_ICON = '''<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg>'''
 
-VINE_DIVIDER = '''<svg class="vine-divider" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-  <path d="M2,14 C20,4 30,24 48,14 C62,6 58,22 60,14 C62,6 58,22 72,14 C90,24 100,4 118,14" stroke-linecap="round"/>
-  <circle cx="48" cy="14" r="2.6" fill="currentColor" stroke="none"/>
-  <circle cx="72" cy="14" r="2.6" fill="currentColor" stroke="none"/>
+# Real, brand-specific motifs — see DESIGN-DIRECTION.md §2. Replaces the
+# old squiggle-and-circle vine graphics with marks tied to confirmed facts.
+
+TWINE_DIVIDER = '''<svg class="twine-divider" viewBox="0 0 120 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+  <path d="M4 10 C30 4 40 16 58 10" stroke-linecap="round"/>
+  <path d="M62 10 C80 4 90 16 116 10" stroke-linecap="round"/>
+  <path d="M56 6 C59 10 63 10 66 6 M56 14 C59 10 63 10 66 14" stroke-linecap="round"/>
 </svg>'''
 
-VINE_TALL = '''<svg viewBox="0 0 120 220" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-  <path d="M60 4c0 22-18 26-18 48s18 26 18 48-18 26-18 48 18 26 18 48" stroke-linecap="round"/>
-  <circle cx="42" cy="30" r="4"/><circle cx="78" cy="30" r="4"/>
-  <circle cx="42" cy="78" r="4"/><circle cx="78" cy="78" r="4"/>
-  <circle cx="42" cy="126" r="4"/><circle cx="78" cy="126" r="4"/>
-  <circle cx="42" cy="174" r="4"/><circle cx="78" cy="174" r="4"/>
+OLIVE_BRANCH = '''<svg class="olive-branch" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+  <path d="M6 58 C40 50 70 40 134 12" stroke-linecap="round"/>
+  <path d="M30 52 C34 42 30 34 20 30" stroke-linecap="round"/>
+  <path d="M55 44 C61 34 58 25 48 20" stroke-linecap="round"/>
+  <path d="M80 34 C87 25 84 16 74 11" stroke-linecap="round"/>
+  <path d="M105 22 C112 14 109 7 100 4" stroke-linecap="round"/>
+</svg>'''
+
+VINE_CANE = '''<svg class="vine-cane" viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+  <path d="M4 30 C40 10 70 34 100 14 C130 -4 160 20 196 8" stroke-linecap="round"/>
+  <path d="M60 22 C64 16 62 10 55 8" stroke-linecap="round"/>
+  <path d="M120 12 C124 6 122 0 115 -2" stroke-linecap="round"/>
+</svg>'''
+
+KANELLO_MARK = '''<svg class="kanello-mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+  <path d="M30 80 C30 60 28 50 22 40 C16 30 20 18 32 14 C40 11 46 14 50 20 L58 34 L70 30 L74 40 L64 46 L66 62 C66 70 62 78 56 80" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 80 L26 90 M56 80 L60 90" stroke-linecap="round"/>
+</svg>'''
+
+
+def vine_rows_bg(on_color=False):
+    cls = "vine-rows-bg vine-rows-bg--on-color" if on_color else "vine-rows-bg"
+    return f'''<svg class="{cls}" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M40 300 L140 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M160 300 L230 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M280 300 L320 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M400 300 L410 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M520 300 L500 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M640 300 L590 0" stroke="currentColor" stroke-width="1"/>
+  <path d="M760 300 L680 0" stroke="currentColor" stroke-width="1"/>
 </svg>'''
 
 
@@ -47,27 +74,14 @@ def page_hero(variant, title, subtitle="", lot=""):
     lot_html = f'<p class="page-hero__lot ui">LOT {lot}</p>' if lot else ""
     sub_html = f"<p>{subtitle}</p>" if subtitle else ""
     return f'''    <div class="{cls}">
-      <div class="reveal">
-        {VINE_DIVIDER}
+      {vine_rows_bg()}
+      <div class="page-hero__inner reveal">
+        {TWINE_DIVIDER}
         <h1>{title}</h1>
         {lot_html}
         {sub_html}
       </div>
     </div>'''
-
-
-def band(color, eyebrow, headline, lede="", extra="", tag="div"):
-    lede_html = f'<p class="band__lede">{lede}</p>' if lede else ""
-    return f'''    <section class="band band--{color}">
-      <div class="band__vine band__vine--left">{VINE_TALL}</div>
-      <div class="band__vine band__vine--right">{VINE_TALL}</div>
-      <div class="band__inner reveal">
-        <p class="band__eyebrow">{eyebrow}</p>
-        <h2 class="band__headline">{headline}</h2>
-        {lede_html}
-        {extra}
-      </div>
-    </section>'''
 
 
 def shell(active_href, title, description, body, extra_head=""):
@@ -179,36 +193,49 @@ section_index_html = "\n".join(
     for i, (href, label, teaser, photo_label, featured) in enumerate(sections, start=1)
 )
 
-legacy_band = band(
-    "purple",
-    "Since 2013",
-    "A grape once lost to time.<br>A family that brought it back.",
-    "Our grandfather Tony discovered the Black Lady grape on nearby Nisyros, considered extinct, and dreamed of a winery to save it. He never lived to see it open &mdash; we've spent every vintage since keeping that dream alive.",
-    extra='<div class="btn-row"><a class="btn btn--outline" href="history.html">Read our story &rarr;</a></div>',
-)
-
-stats_band = f'''    <section class="band band--green">
-      <div class="band__vine band__vine--left">{VINE_TALL}</div>
-      <div class="band__vine band__vine--right">{VINE_TALL}</div>
-      <div class="reveal" style="position:relative;z-index:1">
-        <p class="band__eyebrow" style="text-align:center">By the numbers</p>
-        <div class="stats">
-          <div class="stat"><span class="stat__number" data-target="2013">2013</span><span class="stat__label">Founded</span></div>
-          <div class="stat"><span class="stat__number" data-target="7">7</span><span class="stat__label">Hectares at Horafa</span></div>
-          <div class="stat"><span class="stat__number" data-target="6,000+">6,000+</span><span class="stat__label">Black Lady vines</span></div>
-          <div class="stat"><span class="stat__number" data-target="20yr">20yr</span><span class="stat__label">Cork ageing potential</span></div>
-          <div class="stat"><span class="stat__number" data-target="4.9&#9733;">4.9&#9733;</span><span class="stat__label">Google rating, 79 reviews</span></div>
+invite_split = f'''    <section class="invite-split">
+      <div class="invite-split__media reveal">
+        {photo_placeholder("Photo of the tasting courtyard &mdash; coming soon")}
+      </div>
+      <div class="invite-split__body reveal">
+        <p class="invite-split__eyebrow ui">Kos, Greece</p>
+        <h2 class="invite-split__headline">Come as you are.</h2>
+        <ul class="invite-split__facts">
+          <li>Tastings are free.</li>
+          <li>Drop by, or message ahead to make sure someone's around.</li>
+          <li>We comfortably host 6 &mdash; and have hosted 40.</li>
+          <li>Wheelchair accessible, and pets are welcome too.</li>
+        </ul>
+        <div class="btn-row" style="justify-content:flex-start">
+          <a class="btn" href="contact.html">Plan a visit</a>
         </div>
       </div>
     </section>'''
 
-visit_band = band(
-    "purple",
-    "Kos, Greece",
-    "Come taste the legacy for yourself.",
-    "Free tastings, real hospitality, and wines you won't find anywhere else &mdash; made the same hand-crafted way since the beginning.",
-    extra='<div class="btn-row"><a class="btn" href="contact.html">Plan a visit</a><a class="btn btn--outline" href="eshop.html">Shop the wines</a></div>',
-)
+quote_moment = f'''    <section class="quote-moment">
+      {vine_rows_bg(on_color=True)}
+      <div class="quote-moment__inner reveal">
+        <p class="quote-moment__eyebrow">A small family habit</p>
+        <p class="quote-moment__text">We play music to our wines, to keep them happy.</p>
+        <div class="stat-strip">
+          <span class="stat-strip__item"><strong class="stat__number" data-target="2013">2013</strong>Founded</span>
+          <span class="stat-strip__item"><strong class="stat__number" data-target="7">7</strong>Hectares at Horafa</span>
+          <span class="stat-strip__item"><strong class="stat__number" data-target="6,000+">6,000+</strong>Black Lady vines</span>
+          <span class="stat-strip__item"><strong class="stat__number" data-target="20yr">20yr</strong>Cork ageing potential</span>
+          <span class="stat-strip__item"><strong class="stat__number" data-target="4.9&#9733;">4.9&#9733;</strong>Google rating, 79 reviews</span>
+        </div>
+      </div>
+    </section>'''
+
+invite_close = f'''    <section class="invite-close">
+      <div class="invite-close__inner reveal">
+        {OLIVE_BRANCH}
+        <h2 class="invite-close__headline">Come taste the legacy for yourself.</h2>
+        <p class="invite-close__lede">Free tastings, real hospitality, and wines you won't find anywhere else &mdash; made the same hand-crafted way since the beginning.</p>
+        <div class="btn-row"><a class="btn btn--outline" href="contact.html">Plan a visit</a><a class="btn btn--outline" href="eshop.html">Shop the wines</a></div>
+      </div>
+      <div class="roof-edge"></div>
+    </section>'''
 
 home_body = f'''    <div class="home-hero">
       <div class="reveal">
@@ -218,18 +245,18 @@ home_body = f'''    <div class="home-hero">
           <img class="brand-logo" src="assets/logo.png" alt="Hatzinikolaou Winery">
         </picture>
         <p class="place ui">Kos, Greece</p>
-        {VINE_DIVIDER}
+        {TWINE_DIVIDER}
         <p class="lede">Natural wines, minimum intervention, and a grape once thought extinct.</p>
       </div>
     </div>
-{legacy_band}
-{stats_band}
+{invite_split}
+{quote_moment}
     <div class="container">
       <nav class="explore-grid" aria-label="Site sections">
 {section_index_html}
       </nav>
     </div>
-{visit_band}'''
+{invite_close}'''
 
 write("index.html", shell("index.html", "Hatzinikolaou Winery", "A family winery on Kos, Greece, making natural wines with minimum intervention.", home_body))
 
@@ -259,6 +286,7 @@ philosophy_body = f'''{page_hero("green", "Our Philosophy")}
         </ul>
       </div>
       {photo_placeholder("Photo of the oak barrel cellar &mdash; coming soon")}
+      <div class="reveal" style="text-align:center">{OLIVE_BRANCH}</div>
       <p class="pull-note reveal">Every bottle we produce is alive and has its own story. It has been hand-picked, caressed and nurtured in a family environment. We even play music to our wines, to keep them happy.</p>
     </div>'''
 
@@ -267,17 +295,20 @@ write("philosophy.html", shell("philosophy.html", "Our Philosophy — Hatzinikol
 # ---------------------------------------------------------------- HISTORY
 
 history_body = f'''{page_hero("purple", "History", "The tractor accident, the lost grape, and the dream that outlived him.")}
-    <div class="container prose">
-      <div class="reveal">
-        <p>Our story begins at the end of the last century, when our grandfather Tony (Antonis Hatzinikolaou) discovered a rare variety of grape in nearby Nisyros. It was the now-famous Black Lady (Mavrothilyko), which had been considered extinct. He decided to revive it, and dreamed of building a winery to promote the grape.</p>
-        <p>The winery opened in August 2013 &mdash; but Tony never saw his dream come true. He died in an accident with his tractor in April of that year, while planting Black Lady vines. We kept his dream alive, and made sure to protect the grape he loved so much.</p>
+    <div class="container">
+      <div class="history-frame reveal">
+        {VINE_CANE}
+        <div class="prose">
+          <p>Our story begins at the end of the last century, when our grandfather Tony (Antonis Hatzinikolaou) discovered a rare variety of grape in nearby Nisyros. It was the now-famous Black Lady (Mavrothilyko), which had been considered extinct. He decided to revive it, and dreamed of building a winery to promote the grape.</p>
+          <p>The winery opened in August 2013 &mdash; but Tony never saw his dream come true. He died in an accident with his tractor in April of that year, while planting Black Lady vines. We kept his dream alive, and made sure to protect the grape he loved so much.</p>
+        </div>
+        {photo_placeholder("Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou &mdash; coming soon")}
+        <p class="pull-note">The Black Lady grape is now safe from extinction &mdash; at least five more wineries use it today, across four different islands.</p>
+        <div class="prose">
+          <p>We have over 6,000 plants of our own, and the other vineyards have another two thousand between them. We have spent over 25 years constantly promoting the grape, and helping others discover and cultivate it.</p>
+        </div>
+        {photo_placeholder("Family photo &mdash; coming soon")}
       </div>
-      {photo_placeholder("Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou &mdash; coming soon")}
-      <p class="pull-note reveal">The Black Lady grape is now safe from extinction &mdash; at least five more wineries use it today, across four different islands.</p>
-      <div class="reveal">
-        <p>We have over 6,000 plants of our own, and the other vineyards have another two thousand between them. We have spent over 25 years constantly promoting the grape, and helping others discover and cultivate it.</p>
-      </div>
-      {photo_placeholder("Family photo &mdash; coming soon")}
     </div>'''
 
 write("history.html", shell("history.html", "History — Hatzinikolaou Winery", "How our grandfather Tony Hatzinikolaou discovered and revived the Black Lady grape, once considered extinct.", history_body))
@@ -285,6 +316,12 @@ write("history.html", shell("history.html", "History — Hatzinikolaou Winery", 
 # ---------------------------------------------------------------- GEOGRAPHY
 
 geography_body = f'''{page_hero("green", "Geography", "&ldquo;Horafa&rdquo; &mdash; the big field on Mount Dikaios.")}
+    <div class="fact-strip reveal">
+      <div class="fact-strip__item"><span class="fact-strip__value">7 HA</span><span class="fact-strip__label">Horafa vineyard</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">~300m</span><span class="fact-strip__label">Elevation</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">Chalk</span><span class="fact-strip__label">&amp; limestone soil</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">N Slope</span><span class="fact-strip__label">Mount Dikaios</span></div>
+    </div>
     <div class="container prose">
       <div class="reveal">
         <p>Our vineyard is located at &ldquo;Horafa&rdquo; (which simply means &ldquo;big field&rdquo; in Greek), a hillside on the northern slope of Mount Dikaios. Our winery itself is 1km downhill on the main road, between Kos Town and Zipari.</p>
@@ -302,11 +339,17 @@ write("geography.html", shell("geography.html", "Geography — Hatzinikolaou Win
 # ---------------------------------------------------------------- ECOLOGY
 
 ecology_body = f'''{page_hero("purple", "Biology &amp; Ecology", "Four grapes, a menagerie, and zero waste.")}
+    <div class="fact-strip reveal">
+      <div class="fact-strip__item"><span class="fact-strip__value">4</span><span class="fact-strip__label">Grape varieties</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">Unwatered</span><span class="fact-strip__label">Every vine</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">Zero</span><span class="fact-strip__label">Waste</span></div>
+      <div class="fact-strip__item"><span class="fact-strip__value">Solar</span><span class="fact-strip__label">Powered</span></div>
+    </div>
     <div class="container prose">
       <div class="reveal">
         <p>We currently grow four varieties of grape, all of them black: Merlot, Syrah (also known as Shiraz), Cabernet Sauvignon, and our own local grape, Mavrothilyko (Black Lady). We plan to add around 1,200 roots of Assyrtiko, a Greek white variety, in the near future.</p>
         <p>All of our grapes are unwatered. Our yield is around 400 kilos per 0.1 hectare &mdash; less than half of what is average for the region.</p>
-        <p>Our vineyard is also home to various wild herbs, such as sage, oregano and capers, and to animals including hares, peacocks, tortoises, snakes, and our pet horse, Kanello. We also keep some chickens.</p>
+        <p style="display:flex;gap:16px;align-items:flex-start">{KANELLO_MARK}<span>Our vineyard is also home to various wild herbs, such as sage, oregano and capers, and to animals including hares, peacocks, tortoises, snakes, and our pet horse, Kanello. We also keep some chickens.</span></p>
       </div>
       {photo_placeholder("Photo of Kanello and the vineyard&rsquo;s animals &mdash; coming soon")}
       <div class="reveal">
@@ -320,16 +363,18 @@ write("ecology.html", shell("ecology.html", "Biology & Ecology — Hatzinikolaou
 # ---------------------------------------------------------------- WINES
 
 def wine_block(name, price, blend, abv, desc, nutrition_href):
-    return f'''      <article class="wine reveal">
-        <div class="wine__head">
-          <h2>{name}</h2>
-          <span class="wine__price ui">&euro;{price}</span>
-        </div>
-        <p class="wine__meta">{blend} &middot; {abv}% ABV</p>
-        <div class="wine__body">
+    return f'''      <article class="wine-row reveal">
+        <div class="wine-row__media">
           {photo_placeholder(f"Photo of the {name} bottle &amp; label &mdash; coming soon", "sm")}
+        </div>
+        <div class="wine-row__body">
+          <div class="wine-row__head">
+            <h2>{name}</h2>
+            <span class="wine-row__price ui">&euro;{price}</span>
+          </div>
+          <p class="wine-row__meta">{blend} &middot; {abv}% ABV</p>
           <p>{desc}</p>
-          <a class="wine__nutrition-link" href="{nutrition_href}">Technical &amp; nutritional information &rarr;</a>
+          <a class="wine-row__nutrition-link" href="{nutrition_href}">Technical &amp; nutritional information &rarr;</a>
         </div>
       </article>'''
 
@@ -362,7 +407,9 @@ wines_html = "\n".join([
 
 wines_body = f'''{page_hero("purple", "Wines", "All our wines are particularly strong, and in some cases overwhelming.")}
     <div class="container">
+      <div class="wine-table">
 {wines_html}
+      </div>
     </div>'''
 
 write("wines.html", shell("wines.html", "Wines — Hatzinikolaou Winery", "Platanaki Pink, Platanaki Red, Black Lady, and Asfendiano — the wines of Hatzinikolaou Winery, Kos.", wines_body))
