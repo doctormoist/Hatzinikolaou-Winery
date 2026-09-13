@@ -23,8 +23,9 @@ NAV = [
 PHOTO_ICON = '''<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg>'''
 
 
-def photo_placeholder(label):
-    return f'''<div class="photo-placeholder">{PHOTO_ICON}<div>{label}</div></div>'''
+def photo_placeholder(label, size=""):
+    cls = "photo-placeholder" + (f" photo-placeholder--{size}" if size else "")
+    return f'''<div class="{cls}">{PHOTO_ICON}<div>{label}</div></div>'''
 
 
 def shell(active_href, title, description, body, extra_head=""):
@@ -53,7 +54,7 @@ def shell(active_href, title, description, body, extra_head=""):
       <a class="site-header__brand" href="index.html">
         <picture>
           <source srcset="assets/logo.webp" type="image/webp">
-          <img src="assets/logo.png" alt="Hatzinikolaou Winery" height="42">
+          <img src="assets/logo.png" alt="Hatzinikolaou Winery" width="114" height="42">
         </picture>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -124,6 +125,9 @@ home_body = f'''    <div class="home-hero">
       <p class="place ui">Kos, Greece</p>
       <p class="lede">Natural wines, minimum intervention, and a grape once thought extinct.</p>
     </div>
+    <div class="container" style="padding-top:0">
+      {photo_placeholder("Hero photo of the vineyard at Horafa &mdash; coming soon")}
+    </div>
     <nav class="section-index" aria-label="Site sections">
 {section_index_html}
     </nav>'''
@@ -144,14 +148,17 @@ philosophy_body = f'''    <div class="page-hero">
         <li>We do not use enzymes, artificial yeast, colouring, sugar, water, or anything else. The only thing that goes into our vats is crushed grapes.</li>
         <li>We allow spontaneous fermentation with the wild, indigenous yeast from our own vineyard. No other additives are involved in the process.</li>
         <li>Once ready, our wine is covered with extra virgin olive oil from our own olive grove, for protection.</li>
+      </ul>
+      {photo_placeholder("Photo of hand-harvested grapes &mdash; coming soon")}
+      <ul>
         <li>It matures in oak barrels for six to twenty-four months.</li>
         <li>Most of the wines we produce &mdash; except the ros&eacute; &mdash; are unfiltered. This means they can look murky, but they have a stronger, fuller taste for it.</li>
         <li>We use natural ageing corks that last up to twenty years.</li>
         <li>Everything is done by hand, and we monitor every step of the process ourselves.</li>
         <li>We have the capacity to produce around 40,000 bottles a year &mdash; but we rarely make more than 5,000.</li>
       </ul>
+      {photo_placeholder("Photo of the oak barrel cellar &mdash; coming soon")}
       <p class="pull-note">Every bottle we produce is alive and has its own story. It has been hand-picked, caressed and nurtured in a family environment. We even play music to our wines, to keep them happy.</p>
-      {photo_placeholder("Photo of the vineyard and production &mdash; coming soon")}
     </div>'''
 
 write("philosophy.html", shell("philosophy.html", "Our Philosophy — Hatzinikolaou Winery", "Natural wines with minimum intervention: how Hatzinikolaou Winery makes wine, from unwatered grapes to natural corks.", philosophy_body))
@@ -164,8 +171,9 @@ history_body = f'''    <div class="page-hero">
     <div class="container prose">
       <p>Our story begins at the end of the last century, when our grandfather Tony (Antonis Hatzinikolaou) discovered a rare variety of grape in nearby Nisyros. It was the now-famous Black Lady (Mavrothilyko), which had been considered extinct. He decided to revive it, and dreamed of building a winery to promote the grape.</p>
       <p>The winery opened in August 2013 &mdash; but Tony never saw his dream come true. He died in an accident with his tractor in April of that year, while planting Black Lady vines. We kept his dream alive, and made sure to protect the grape he loved so much.</p>
+      {photo_placeholder("Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou &mdash; coming soon")}
       <p>The Black Lady grape is now safe from extinction. There are at least five more wineries that use it today, across four different islands. We have over 6,000 plants of our own, and the other vineyards have another two thousand between them. We have spent over 25 years constantly promoting the grape, and helping others discover and cultivate it.</p>
-      {photo_placeholder("Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou and family &mdash; coming soon")}
+      {photo_placeholder("Family photo &mdash; coming soon")}
     </div>'''
 
 write("history.html", shell("history.html", "History — Hatzinikolaou Winery", "How our grandfather Tony Hatzinikolaou discovered and revived the Black Lady grape, once considered extinct.", history_body))
@@ -177,9 +185,10 @@ geography_body = f'''    <div class="page-hero">
     </div>
     <div class="container prose">
       <p>Our vineyard is located at &ldquo;Horafa&rdquo; (which simply means &ldquo;big field&rdquo; in Greek), a hillside on the northern slope of Mount Dikaios. Our winery itself is 1km downhill on the main road, between Kos Town and Zipari.</p>
+      {photo_placeholder("Photo of the Horafa vineyard hillside &mdash; coming soon")}
       <p>Horafa is 7 hectares in total, though only about half of that is currently planted. The land is mostly chalky, with a mixture of clay and limestone in some parts. It is very windy, which helps the plants, and can also be humid, with winds bringing in moisture from the Aegean Sea.</p>
       <p>There is quite a lot of rainfall in the winter, and summer temperatures remain mild &mdash; conditions that particularly suit our varieties, especially the Black Lady and the Syrah.</p>
-      {photo_placeholder("Photo of the Horafa vineyard &mdash; coming soon")}
+      {photo_placeholder("Photo of the view toward the Aegean Sea &mdash; coming soon")}
     </div>'''
 
 write("geography.html", shell("geography.html", "Geography — Hatzinikolaou Winery", "Horafa: our hillside vineyard on the northern slope of Mount Dikaios, Kos.", geography_body))
@@ -193,8 +202,9 @@ ecology_body = f'''    <div class="page-hero">
       <p>We currently grow four varieties of grape, all of them black: Merlot, Syrah (also known as Shiraz), Cabernet Sauvignon, and our own local grape, Mavrothilyko (Black Lady). We plan to add around 1,200 roots of Assyrtiko, a Greek white variety, in the near future.</p>
       <p>All of our grapes are unwatered. Our yield is around 400 kilos per 0.1 hectare &mdash; less than half of what is average for the region.</p>
       <p>Our vineyard is also home to various wild herbs, such as sage, oregano and capers, and to animals including hares, peacocks, tortoises, snakes, and our pet horse, Kanello. We also keep some chickens.</p>
+      {photo_placeholder("Photo of Kanello and the vineyard&rsquo;s animals &mdash; coming soon")}
       <p>We try to produce zero waste. Leftovers from production are given to a local distillery and turned into ouzo, while the leaves and other plant matter become compost or fodder for our animals. Our main source of electricity is the solar panels on top of our winery, and we plan to add some windmills as well.</p>
-      {photo_placeholder("Photo of the vineyard&rsquo;s wildlife and solar panels &mdash; coming soon")}
+      {photo_placeholder("Photo of the solar panels &mdash; coming soon")}
     </div>'''
 
 write("ecology.html", shell("ecology.html", "Biology & Ecology — Hatzinikolaou Winery", "Our grape varieties, unwatered yields, vineyard wildlife, and zero-waste, solar-powered approach.", ecology_body))
@@ -209,6 +219,7 @@ def wine_block(name, price, blend, abv, desc, nutrition_href):
         </div>
         <p class="wine__meta">{blend} &middot; {abv}% ABV</p>
         <div class="wine__body">
+          {photo_placeholder(f"Photo of the {name} bottle &amp; label &mdash; coming soon", "sm")}
           <p>{desc}</p>
           <a class="wine__nutrition-link" href="{nutrition_href}">Technical &amp; nutritional information &rarr;</a>
         </div>
@@ -218,7 +229,7 @@ wines_html = "\n".join([
     wine_block(
         "Platanaki Pink", "14",
         "50% Cabernet Sauvignon, 50% Syrah", "13",
-        "A dry ros&eacute; wine, quite strong for the style &mdash; partly because the grapes are unwatered, and partly because it is unfiltered. Best served chilled. Pairs well with chicken, pasta, salads, or even seafood.",
+        "A dry ros&eacute; wine, quite strong for the style, partly because the grapes are unwatered and partly because it is unfiltered. Best served chilled. Pairs well with chicken, pasta, salads, or even seafood.",
         "nutrition-platanaki-pink.html",
     ),
     wine_block(
@@ -230,13 +241,13 @@ wines_html = "\n".join([
     wine_block(
         "Black Lady", "29",
         "100% Black Lady grape", "13",
-        "A complex dry red with a rich aftertaste &mdash; a taste of history, made entirely from our own unique grape. Enjoy it on its own, or with heavier meat dishes, game, or cold cuts. Serve at 14&deg;C.",
+        "A complex dry red with a rich aftertaste: a taste of history, made entirely from our own unique grape. Enjoy it on its own, or with heavier meat dishes, game, or cold cuts. Serve at 14&deg;C.",
         "nutrition-black-lady.html",
     ),
     wine_block(
         "Asfendiano", "24",
         "Sweet dessert wine, no added sugar", "13",
-        "Made from 100% grapes, with no added sugar or sweetener &mdash; its sweetness comes from boiling part of the must, which we call &ldquo;psimma.&rdquo; It tastes like caramel, and can be enjoyed chilled, warm, or even boiled as part of a Christmas Gl&uuml;hwein. It also works as a cocktail base, or paired with dark chocolate.",
+        "Made from 100% grapes, with no added sugar or sweetener. Its sweetness comes from boiling part of the must, which we call &ldquo;psimma.&rdquo; It tastes like caramel, and can be enjoyed chilled, warm, or even boiled as part of a Christmas Gl&uuml;hwein. It also works as a cocktail base, or paired with dark chocolate.",
         "nutrition-asfendiano.html",
     ),
 ])
@@ -253,7 +264,7 @@ write("wines.html", shell("wines.html", "Wines — Hatzinikolaou Winery", "Plata
 
 # ---------------------------------------------------------------- ESHOP
 
-eshop_body = '''    <div class="page-hero">
+eshop_body = f'''    <div class="page-hero">
       <h1>Eshop</h1>
     </div>
     <div class="container prose" style="text-align:center">
@@ -261,6 +272,7 @@ eshop_body = '''    <div class="page-hero">
       <p>For now, we only ship within the EU.</p>
       <p><a class="btn" href="mailto:hatzinikolaouwinery@gmail.com">Email us to order</a></p>
       <p class="footnote">Online ordering is something we're working on for the future &mdash; for now, every order is arranged personally by email.</p>
+      {photo_placeholder("Photo of a wine order ready to ship &mdash; coming soon")}
     </div>'''
 
 write("eshop.html", shell("eshop.html", "Eshop — Hatzinikolaou Winery", "Order Hatzinikolaou Winery wines directly by email. Shipping within the EU.", eshop_body))
@@ -278,6 +290,7 @@ contact_body = f'''    <div class="page-hero">
         <tr><th class="ui">Email</th><td><a href="mailto:hatzinikolaouwinery@gmail.com">hatzinikolaouwinery@gmail.com</a></td></tr>
       </table>
       {photo_placeholder("Map &mdash; coming soon")}
+      {photo_placeholder("Photo of the tasting area &amp; courtyard &mdash; coming soon")}
     </div>'''
 
 write("contact.html", shell("contact.html", "Contact — Hatzinikolaou Winery", "Visit or contact Hatzinikolaou Winery on Kos: address, phone, and email.", contact_body))
@@ -307,6 +320,7 @@ def nutrition_page(slug, name, lot, composition, certifications, vines, yield_, 
       <p class="ui">LOT {lot}</p>
     </div>
     <div class="container">
+      {photo_placeholder(f"Photo of the {name} bottle &amp; label &mdash; coming soon", "sm")}
       <div class="notice ui">This page currently shows our production and technical specifications. Full lab-verified nutritional information (calories, sugars, sulfites, etc.) is pending lab results and will be added here once available.</div>
       <table class="spec-table">
         {rows}

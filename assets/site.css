@@ -207,6 +207,7 @@ img {
 .home-hero img.brand-logo {
   max-width: 420px;
   width: 100%;
+  aspect-ratio: 900 / 333;
   margin: 0 auto 20px;
 }
 
@@ -269,12 +270,15 @@ main {
 }
 
 .pull-note {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  border-left: 3px solid var(--gold);
-  padding: 4px 0 4px 16px;
-  margin: 1.6em 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--purple);
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.3em 10%;
+  margin: 2em 0;
 }
 
 /* ---------- Photo placeholder ---------- */
@@ -296,6 +300,17 @@ main {
   height: 34px;
   color: var(--gold);
   margin: 0 auto 10px;
+}
+
+.photo-placeholder--sm {
+  padding: 22px 14px;
+  margin: 0 0 16px;
+}
+
+.photo-placeholder--sm svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 6px;
 }
 
 /* ---------- Section index (home page) ---------- */
@@ -383,10 +398,9 @@ main {
 
 .wine__meta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.88rem;
+  color: var(--green-deep);
+  font-weight: 600;
   margin: 0 0 12px;
 }
 
@@ -439,10 +453,15 @@ main {
   font-size: 0.9rem;
   background: var(--cream);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--gold);
   padding: 14px 18px;
   border-radius: 4px;
   margin: 0 0 28px;
+}
+
+.notice::before {
+  content: "Note: ";
+  font-weight: 700;
+  color: var(--green-deep);
 }
 
 /* ---------- Spec table (nutrition pages) ---------- */
@@ -515,5 +534,5 @@ main {
 
 .site-footer__legal {
   font-size: 0.78rem;
-  color: #a5977f;
+  color: #75654f;
 }
