@@ -380,6 +380,10 @@ img {
   opacity: 0.14;
 }
 
+.hero-cinematic__frame .vine-rows-bg {
+  z-index: 2;
+}
+
 /* Topographic contour lines — from Horafa's real elevation (~300m) on
    the northern slope of Mount Dikaios. Used on Geography as a large
    visual moment, distinct from the vine-row motif. */
@@ -961,10 +965,26 @@ main {
   background: linear-gradient(to bottom, var(--purple) 0%, var(--purple-deep) 45%, var(--purple-950) 100%);
 }
 
+/* The gradient above is the fallback/base; .hero-cinematic__photo (when
+   present) sits on top of it, with the vignette below layered above the
+   photo — explicit z-index because ::before generated content always
+   paints before (i.e. below) real DOM children, regardless of source
+   order, so it needs pulling above the img on purpose. */
+.hero-cinematic__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) contrast(1.05) brightness(0.68);
+  z-index: 0;
+}
+
 .hero-cinematic__frame::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     radial-gradient(60% 45% at 50% 22%, rgba(217, 184, 118, 0.16), transparent 70%),
     radial-gradient(120% 90% at 50% 110%, rgba(0, 0, 0, 0.45), transparent 60%);

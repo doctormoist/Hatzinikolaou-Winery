@@ -135,6 +135,15 @@ compositionally:
   absolutely-positioned parent), with a small caption naming exactly what
   real photo belongs there. The same markup holds a real `<img>` later
   with no structural change.
+- **Hero photo:** `.hero-cinematic__photo` (a new class, distinct from
+  `.frame__photo`) fills the home hero's background behind the existing
+  gradient/vignette/vine-row-line layers, `z-index`-ordered explicitly so
+  the vignette (`::before`) and line accents paint above it. Currently
+  `vineyard-dusk.jpg`, under the same placeholder-photo policy below; the
+  hero previously had a "coming soon" caption promising a photo but no
+  `<img>` was ever added, leaving it an empty gradient — this was a gap
+  in the initial placeholder-photo pass, not an intentional photo-less
+  hero design.
 - **Placeholder photo policy (current, explicit exception):** The owner
   twice explicitly asked for real placeholder photography instead of
   icons, first accepting an AI-generated-image alternative, then asking
