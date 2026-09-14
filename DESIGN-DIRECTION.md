@@ -152,16 +152,24 @@ compositionally:
   fabricating or stock-substituting a likeness for a real, named,
   deceased person isn't a placeholder question — it's not something an
   "override" reaches for regardless of licensing or publication status.
-- **Photo treatment:** `.frame__photo` runs through a uniform filter
-  (`saturate(0.65) contrast(1.02) brightness(0.78) blur(7px)`,
-  `scale(1.05)` to hide the blur's edge falloff) plus a two-layer
-  `.frame__tint` (a flat dark fade at the bottom so the caption always
-  has enough contrast regardless of that photo's own brightness there,
-  and a diagonal purple/green wash underneath tying it to the site's
-  environment). The blur is load-bearing, not just mood: several of these
-  are real bottle-label photos from *other* wines, and any of their own
-  label text needs to stay illegible so it never reads as this wine's
-  actual label.
+- **Photo treatment:** `.frame__photo` runs a light color-grade filter
+  (`saturate(0.82) contrast(1.03) brightness(0.9)`, no blur) plus a
+  two-layer `.frame__tint` (a flat dark fade at the bottom so the caption
+  always has enough contrast regardless of that photo's own brightness
+  there, and a diagonal purple/green wash underneath tying it to the
+  site's environment). This alone, stacked with `.frame__tint` — and in
+  `.feature-moment`, a second dark gradient — already pushes photos quite
+  dark, so the base filter deliberately stays light: an earlier version
+  additionally ran every photo through a heavy blur, and stacked under
+  the other dark layers it left non-bottle photos (grapes, vineyard,
+  courtyard, barrels) reading as an almost-flat dark rectangle, not a
+  photo. The heavy version survives only as `.frame__photo--bottle`
+  (`saturate(0.6) contrast(1.02) brightness(0.75) blur(7px)`,
+  `scale(1.05)` to hide the blur's edge falloff), applied to the four
+  bottle-photo images specifically: those are real bottle-label photos
+  from *other* wines, and their own label text needs to stay illegible so
+  it never reads as this wine's actual label — a concern that doesn't
+  apply to any other photo subject on the site.
 - **Treatment (once real photos exist):** Warm, sunlit color grade,
   natural light, imperfect framing — the opposite of studio-lit product
   photography.

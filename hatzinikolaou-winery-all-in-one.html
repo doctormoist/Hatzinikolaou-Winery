@@ -471,21 +471,29 @@ img {
 
 /* A real photo dropped into a .frame: fills it edge to edge, color-graded
    toward the site's purple environment (rather than shown at native color)
-   so photos from many different sources still read as one system, and a
-   generic placeholder's own incidental details (unrelated text on a
-   generic stock label, for instance) stay unobtrusive. */
+   so photos from many different sources still read as one system. Kept
+   light — just enough grading to feel like one system — because these
+   frames already stack a dark .frame__tint (and, in feature-moment, a
+   second dark gradient) on top; a heavy filter here on top of that leaves
+   nothing recognizable as a photo, just a flat dark rectangle. */
 .frame__photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* A soft blur is deliberate, not just a mood filter: these are generic
-     stock stand-ins (a Wine_bottle photo, not this winery's actual
-     label), and any incidental text on them — a real, different bottle's
-     real label — needs to stay illegible so it never reads as this
-     wine's actual label. */
-  filter: saturate(0.65) contrast(1.02) brightness(0.78) blur(7px);
+  filter: saturate(0.82) contrast(1.03) brightness(0.9);
+}
+
+/* Bottle photos only: these are real *other* wines' bottle-label photos
+   used as generic stand-ins, so any incidental label text on them needs
+   to stay illegible or it reads as this wine's actual label. The blur is
+   load-bearing for that reason, not a mood filter — non-bottle photos
+   (vineyard, courtyard, barrels, etc.) have no label text and don't need
+   it, so they keep the lighter .frame__photo treatment above.
+   scale(1.05) hides the blur's own edge falloff. */
+.frame__photo--bottle {
+  filter: saturate(0.6) contrast(1.02) brightness(0.75) blur(7px);
   transform: scale(1.05);
 }
 
