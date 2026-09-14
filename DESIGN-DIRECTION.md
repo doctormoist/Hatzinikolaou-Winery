@@ -121,34 +121,47 @@ compositionally:
 
 ## 5. Imagery
 
-- **Photography direction:** Real, unstaged documentary photography once
-  supplied by the owner — hands, the table, the horse, the tasting
-  courtyard, the vineyard rows — cropped generously and imperfectly, full
-  frame, edge-to-edge where the layout calls for it. See `PRODUCT.md`/
-  `CLAUDE.md`: no stock or AI-generated imagery may substitute for it.
+- **Photography direction (long-term):** Real, unstaged documentary
+  photography once supplied by the owner — hands, the table, the horse,
+  the tasting courtyard, the vineyard rows — cropped generously and
+  imperfectly, full frame, edge-to-edge where the layout calls for it.
+  `PRODUCT.md`/`CLAUDE.md`'s no-stock/no-AI-photography rule governs the
+  *final* site; see the placeholder policy below for the explicit,
+  narrower exception in effect until real photos arrive.
 - **Status of real photography:** None supplied yet (confirmed absence,
-  see `SITE-CONTENT-NOTES.md`). Every image slot is now a `.frame` — a
-  deep-toned gradient plate with a small corner caption naming exactly
-  what will go there, styled like a blank plate in a printed layout
-  rather than an empty-state UI icon (dashed box + centered icon, the
-  previous convention). The same markup holds a real `<img>` later with
-  no structural change.
-- **Frame variants:** `.frame--portrait` (3:4), `.frame--tall` (3:4),
-  `.frame--square` (1:1), `.frame--wide` (21:9), `.frame--full` (edge to
-  edge, 100vw), `.frame--fill` (stretches to fill an absolutely
-  positioned parent, used behind full-bleed section backgrounds) — chosen
-  per composition rather than one aspect ratio reused everywhere.
-- **Placeholder icon per frame:** Each `.frame__mark` now shows a small
-  line icon matching what its caption actually describes (grape cluster,
-  oak barrel, horse, hills, waves, wine bottle, shipping box, map pin,
-  a generic person/pair-of-people silhouette for the two portrait slots)
-  instead of one generic "photo" icon reused everywhere. Explicitly does
-  *not* extend to generating photorealistic stand-ins: the owner asked for
-  AI-generated placeholder photos and it was declined for two reasons —
-  the site-wide no-stock/no-AI-photography rule above, and, specifically
-  for the History page's Tony/family slots, that fabricating a likeness of
-  a real, named, deceased person is not something an "override" should
-  reach for even with sign-off. Icons stay schematic on purpose.
+  see `SITE-CONTENT-NOTES.md`). Every image slot is a `.frame`, sized per
+  composition (`.frame--portrait` 3:4, `.frame--square` 1:1, `.frame--wide`
+  21:9, `.frame--full` edge-to-edge 100vw, `.frame--fill` stretches to an
+  absolutely-positioned parent), with a small caption naming exactly what
+  real photo belongs there. The same markup holds a real `<img>` later
+  with no structural change.
+- **Placeholder photo policy (current, explicit exception):** The owner
+  twice explicitly asked for real placeholder photography instead of
+  icons, first accepting an AI-generated-image alternative, then asking
+  for real (Wikimedia Commons, freely licensed) stock photos instead —
+  and separately confirmed this build isn't being published, so the
+  standing licensing/attribution concern doesn't apply here. Implemented
+  as `assets/images/*.jpg`, downloaded from Wikimedia Commons, one real
+  generic photo per subject (a vineyard, oak barrels, a horse in a field,
+  solar panels, a wine bottle, etc.) — genuinely photographic, not
+  AI-generated. Every `.frame__photo` still carries its "— coming soon"
+  caption, so nothing here claims to be this winery's actual photography.
+  Two things stay explicitly excluded from this exception, unaffected by
+  either ask: the History page's Tony and family-photo slots keep the
+  generic person/pair-of-people line icon (`.frame__mark`), because
+  fabricating or stock-substituting a likeness for a real, named,
+  deceased person isn't a placeholder question — it's not something an
+  "override" reaches for regardless of licensing or publication status.
+- **Photo treatment:** `.frame__photo` runs through a uniform filter
+  (`saturate(0.65) contrast(1.02) brightness(0.78) blur(7px)`,
+  `scale(1.05)` to hide the blur's edge falloff) plus a two-layer
+  `.frame__tint` (a flat dark fade at the bottom so the caption always
+  has enough contrast regardless of that photo's own brightness there,
+  and a diagonal purple/green wash underneath tying it to the site's
+  environment). The blur is load-bearing, not just mood: several of these
+  are real bottle-label photos from *other* wines, and any of their own
+  label text needs to stay illegible so it never reads as this wine's
+  actual label.
 - **Treatment (once real photos exist):** Warm, sunlit color grade,
   natural light, imperfect framing — the opposite of studio-lit product
   photography.
@@ -234,3 +247,4 @@ compositionally:
 | 2026-09-13 | `impeccable detect` flagged Instrument Serif itself as an increasingly overused face in AI-generated design | Not acted on unilaterally since the font was a separate, already-approved decision — flagged to the owner instead |
 | 2026-09-13 | Reviewer flagged the home page's 7-page index was still a repeating photo-tile card grid; rebuilt as alternating asymmetric rows (`.walk`) | The card grid violated CLAUDE.md's rule against repetitive/interchangeable sections |
 | 2026-09-14 | Owner requested a complete visual redesign, not a polish: purple must dominate, green stays secondary and tied to land content, cream/paper must not be the visual identity, every major section must have a distinct composition, photography must be treated architecturally (full-bleed, varied crops, overlapping frames) instead of boxed, and motion should read as cinematic (parallax, mask reveals) not decorative. Superseded The Long Table with **Dusk at Horafa**: rebuilt every page (this file, §1–9) | This was a deliberate, explicit reversal of the previous direction, not a bug fix — logged rather than silently overwritten. Real photography still doesn't exist, so the redesign focused on what's actually buildable now: color, composition, background/texture, and motion — every image slot stays a labeled placeholder frame, ready for real photography, per `CLAUDE.md`'s rule against stock/AI imagery |
+| 2026-09-14 | Owner asked for AI-generated placeholder photos instead of the placeholder icons just built; declined (fabricating photorealistic images of this specific real business/products/place, and especially of Tony, isn't something an "override" should do). Owner then asked for real stock photos specifically, and separately confirmed this build isn't being published (so the standing licensing/attribution concern doesn't apply). Implemented: real, freely-licensed Wikimedia Commons photos (one generic subject-matched photo per slot) in `assets/images/`, run through a uniform blur/color treatment (§5) | AI-generating a specific real business's imagery and real stock photography are different categories of risk — the former fabricates documentation of something real, the latter is a generic, clearly-captioned stand-in. Tony/family stayed on icons regardless, since that concern isn't about licensing or publication status |

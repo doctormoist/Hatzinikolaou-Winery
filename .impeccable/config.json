@@ -434,6 +434,42 @@
         ],
         "createdAt": "2026-09-14T14:45:41.496Z",
         "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every other page"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "nutrition-platanaki-pink.html"
+        ],
+        "createdAt": "2026-09-14T15:29:52.154Z",
+        "reason": "Same .frame/.frame__caption pattern as every other page — caption already has 18px/16px inset, not flush"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "nutrition-platanaki-red.html"
+        ],
+        "createdAt": "2026-09-14T15:29:52.166Z",
+        "reason": "Same .frame/.frame__caption pattern as every other page — caption already has 18px/16px inset, not flush"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "nutrition-black-lady.html"
+        ],
+        "createdAt": "2026-09-14T15:29:52.177Z",
+        "reason": "Same .frame/.frame__caption pattern as every other page — caption already has 18px/16px inset, not flush"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "nutrition-asfendiano.html"
+        ],
+        "createdAt": "2026-09-14T15:29:52.187Z",
+        "reason": "Same .frame/.frame__caption pattern as every other page — caption already has 18px/16px inset, not flush"
       }
     ]
   }
