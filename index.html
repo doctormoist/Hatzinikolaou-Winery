@@ -58,28 +58,44 @@
     </div>
   </header>
   <main id="main">
-    <div class="home-hero">
-      <div class="reveal">
+
+    <div class="hero-cinematic grain">
+      <div class="hero-cinematic__frame parallax" data-speed="0.12">
+        <svg class="vine-rows-bg" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M40 300 L140 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M160 300 L230 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M280 300 L320 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M400 300 L410 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M520 300 L500 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M640 300 L590 0" stroke="currentColor" stroke-width="1"/>
+          <path d="M760 300 L680 0" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="hero-cinematic__content reveal-mask">
         <h1 class="sr-only">Hatzinikolaou Winery</h1>
         <picture>
           <source srcset="assets/logo.webp" type="image/webp">
-          <img class="brand-logo" src="assets/logo.png" alt="Hatzinikolaou Winery">
+          <img class="hero-cinematic__mark" src="assets/logo.png" alt="Hatzinikolaou Winery">
         </picture>
         <p class="place ui">Kos, Greece</p>
-        <svg class="twine-divider" viewBox="0 0 120 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-  <path d="M4 10 C30 4 40 16 58 10" stroke-linecap="round"/>
-  <path d="M62 10 C80 4 90 16 116 10" stroke-linecap="round"/>
-  <path d="M56 6 C59 10 63 10 66 6 M56 14 C59 10 63 10 66 14" stroke-linecap="round"/>
-</svg>
         <p class="lede">Natural wines, minimum intervention, and a grape once thought extinct.</p>
       </div>
+      <p class="hero-cinematic__caption">Photo of the tasting courtyard at dusk &mdash; coming soon</p>
+      <div class="hero-cinematic__scroll" aria-hidden="true">
+        <svg viewBox="0 0 12 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 1v14M2 11l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scroll
+      </div>
     </div>
+
     <section class="invite-split">
-      <div class="invite-split__media reveal">
-        <div class="photo-placeholder reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><div>Photo of the tasting courtyard &mdash; coming soon</div></div>
+      <div class="invite-split__media">
+        <div class="frame reveal-mask parallax" data-speed="0.06">
+          <div class="frame__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg></div>
+          <p class="frame__caption">Photo of the tasting courtyard &mdash; coming soon</p>
+        </div>
       </div>
       <div class="invite-split__body reveal">
-        <p class="invite-split__eyebrow ui">Kos, Greece</p>
+        <p class="eyebrow">Kos, Greece</p>
         <h2 class="invite-split__headline">Come as you are.</h2>
         <ul class="invite-split__facts">
           <li>Tastings are free.</li>
@@ -88,20 +104,21 @@
           <li>Wheelchair accessible, and pets are welcome too.</li>
         </ul>
         <div class="btn-row" style="justify-content:flex-start">
-          <a class="btn" href="contact.html">Plan a visit</a>
+          <a class="btn btn--solid" href="contact.html">Plan a visit</a>
         </div>
       </div>
     </section>
-    <section class="quote-moment">
-      <svg class="vine-rows-bg vine-rows-bg--on-color" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M40 300 L140 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M160 300 L230 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M280 300 L320 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M400 300 L410 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M520 300 L500 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M640 300 L590 0" stroke="currentColor" stroke-width="1"/>
-  <path d="M760 300 L680 0" stroke="currentColor" stroke-width="1"/>
-</svg>
+
+    <section class="quote-moment grain">
+      <svg class="vine-rows-bg vine-rows-bg--green parallax" data-speed="-0.05" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M40 300 L140 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M160 300 L230 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M280 300 L320 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M400 300 L410 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M520 300 L500 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M640 300 L590 0" stroke="currentColor" stroke-width="1"/>
+        <path d="M760 300 L680 0" stroke="currentColor" stroke-width="1"/>
+      </svg>
       <div class="quote-moment__inner reveal">
         <p class="quote-moment__eyebrow">A small family habit</p>
         <p class="quote-moment__text">We play music to our wines, to keep them happy.</p>
@@ -114,80 +131,79 @@
         </div>
       </div>
     </section>
-    <div class="container">
-      <nav class="walk" aria-label="Site sections">
-      <a class="walk-row reveal" href="philosophy.html">
-        <span class="walk-row__index" aria-hidden="true">01</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo representing our philosophy in the vineyard &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Our Philosophy</h2>
-          <p>Minimum intervention, wild fermentation, and grapes we never water.</p>
-        </span>
-      </a>
-      <a class="walk-row walk-row--featured reveal" href="history.html">
-        <span class="walk-row__index" aria-hidden="true">02</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of Anthony &ldquo;Tony&rdquo; Hatzinikolaou &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>History</h2>
-          <p>How our grandfather Tony saved the Black Lady grape from extinction.</p>
-        </span>
-      </a>
-      <a class="walk-row reveal" href="geography.html">
-        <span class="walk-row__index" aria-hidden="true">03</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of the Horafa vineyard hillside &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Geography</h2>
-          <p>Horafa: a windswept hillside vineyard on Mount Dikaios.</p>
-        </span>
-      </a>
-      <a class="walk-row reveal" href="ecology.html">
-        <span class="walk-row__index" aria-hidden="true">04</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of vineyard wildlife &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Biology &amp; Ecology</h2>
-          <p>Four grape varieties, zero waste, and a vineyard shared with hares, peacocks, and our horse Kanello.</p>
-        </span>
-      </a>
-      <a class="walk-row walk-row--featured reveal" href="wines.html">
-        <span class="walk-row__index" aria-hidden="true">05</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of the four wine bottles together &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Wines</h2>
-          <p>Platanaki Pink, Platanaki Red, Black Lady, and Asfendiano.</p>
-        </span>
-      </a>
-      <a class="walk-row reveal" href="eshop.html">
-        <span class="walk-row__index" aria-hidden="true">06</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of a wine order ready to ship &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Eshop</h2>
-          <p>Order directly from us &mdash; we currently ship across the EU.</p>
-        </span>
-      </a>
-      <a class="walk-row reveal" href="contact.html">
-        <span class="walk-row__index" aria-hidden="true">07</span>
-        <span class="walk-row__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg><span>Photo of the tasting area &amp; courtyard &mdash; coming soon</span></span>
-        <span class="walk-row__body">
-          <h2>Contact</h2>
-          <p>Find us on the road between Kos Town and Zipari.</p>
-        </span>
-      </a>
+
+    <a class="feature-moment reveal-mask" href="history.html" aria-label="Read: History">
+      <div class="feature-moment__frame parallax" data-speed="0.1">
+        <div class="frame frame--fill">
+          <div class="frame__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg></div>
+        </div>
+      </div>
+      <div class="feature-moment__body">
+        <span class="feature-moment__index">01 &mdash; History</span>
+        <h2>The dream that outlived him.</h2>
+        <p>How our grandfather Tony discovered the Black Lady grape, once thought extinct, and the family that kept his dream alive.</p>
+        <span class="btn">Read the story</span>
+      </div>
+    </a>
+
+    <a class="feature-moment feature-moment--right reveal-mask" href="wines.html" aria-label="Read: Wines">
+      <div class="feature-moment__frame parallax" data-speed="0.1">
+        <div class="frame frame--fill">
+          <div class="frame__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.7"/><path d="M21 16l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19"/></svg></div>
+        </div>
+      </div>
+      <div class="feature-moment__body">
+        <span class="feature-moment__index">05 &mdash; Wines</span>
+        <h2>Platanaki Pink, Platanaki Red, Black Lady, Asfendiano.</h2>
+        <p>Four wines, unfiltered and unwatered, made the same hand-crafted way since the beginning.</p>
+        <span class="btn">See the wines</span>
+      </div>
+    </a>
+
+    <section class="manifest grain">
+      <p class="label-meta manifest__eyebrow" style="text-align:center">Further reading</p>
+      <nav class="manifest__list" aria-label="More site sections">
+        <a class="manifest__row" href="philosophy.html">
+          <span class="manifest__num">02</span>
+          <span class="manifest__name">Our Philosophy</span>
+          <span class="manifest__desc">Minimum intervention, wild fermentation, grapes we never water.</span>
+        </a>
+        <a class="manifest__row" href="geography.html">
+          <span class="manifest__num">03</span>
+          <span class="manifest__name">Geography</span>
+          <span class="manifest__desc">Horafa: a windswept hillside vineyard on Mount Dikaios.</span>
+        </a>
+        <a class="manifest__row" href="ecology.html">
+          <span class="manifest__num">04</span>
+          <span class="manifest__name">Biology &amp; Ecology</span>
+          <span class="manifest__desc">Four grape varieties, zero waste, a vineyard shared with Kanello the horse.</span>
+        </a>
+        <a class="manifest__row" href="eshop.html">
+          <span class="manifest__num">06</span>
+          <span class="manifest__name">Eshop</span>
+          <span class="manifest__desc">Order directly from us &mdash; we currently ship across the EU.</span>
+        </a>
+        <a class="manifest__row" href="contact.html">
+          <span class="manifest__num">07</span>
+          <span class="manifest__name">Contact</span>
+          <span class="manifest__desc">Find us on the road between Kos Town and Zipari.</span>
+        </a>
       </nav>
-    </div>
-    <section class="invite-close">
+    </section>
+
+    <section class="invite-close grain">
       <div class="invite-close__inner reveal">
         <svg class="olive-branch" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-  <path d="M6 58 C40 50 70 40 134 12" stroke-linecap="round"/>
-  <path d="M30 52 C34 42 30 34 20 30" stroke-linecap="round"/>
-  <path d="M55 44 C61 34 58 25 48 20" stroke-linecap="round"/>
-  <path d="M80 34 C87 25 84 16 74 11" stroke-linecap="round"/>
-  <path d="M105 22 C112 14 109 7 100 4" stroke-linecap="round"/>
-</svg>
+          <path d="M6 58 C40 50 70 40 134 12" stroke-linecap="round"/>
+          <path d="M30 52 C34 42 30 34 20 30" stroke-linecap="round"/>
+          <path d="M55 44 C61 34 58 25 48 20" stroke-linecap="round"/>
+          <path d="M80 34 C87 25 84 16 74 11" stroke-linecap="round"/>
+          <path d="M105 22 C112 14 109 7 100 4" stroke-linecap="round"/>
+        </svg>
         <h2 class="invite-close__headline">Come taste the legacy for yourself.</h2>
         <p class="invite-close__lede">Free tastings, real hospitality, and wines you won't find anywhere else &mdash; made the same hand-crafted way since the beginning.</p>
-        <div class="btn-row"><a class="btn btn--outline" href="contact.html">Plan a visit</a><a class="btn btn--outline" href="eshop.html">Shop the wines</a></div>
+        <div class="btn-row"><a class="btn" href="contact.html">Plan a visit</a><a class="btn" href="eshop.html">Shop the wines</a></div>
       </div>
-      <div class="roof-edge"></div>
     </section>
   </main>
   <footer class="site-footer">

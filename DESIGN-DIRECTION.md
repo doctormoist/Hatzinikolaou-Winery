@@ -10,188 +10,206 @@ section should be answerable in plain language, grounded in confirmed facts
 from `SITE-CONTENT-NOTES.md` — never invented history, imagery, or symbolism.
 
 Status: **built.** Live across every page. See §10 for how this was decided
-and built.
+and built. This supersedes the previous "The Long Table" direction (still
+described in the §10 log for history) — the owner asked for a complete
+visual redesign, not a polish, explicitly rejecting the cream/paper ground
+that direction had made the resting surface of the site.
 
 ---
 
 ## 1. Chosen direction
 
-- **Name:** The Long Table (purple/green)
-- **Core concept:** The site as an invitation into the winery's actual,
-  confirmed everyday reality — free tastings, drop-ins welcome, hosting six
-  or forty people around a table, a horse named Kanello wandering past, wine
-  sealed under the family's own olive oil — built on the real brand colors
-  (purple from the logo, green from the vine/olive world) instead of the
-  neutral terracotta palette first pitched for this direction.
-- **Emotional feeling:** Unhurried, sun-warmed, personal — like being waved
-  over by someone who already knows you're coming.
-- **Why it fits this business:** `PRODUCT.md` states the tone should be
-  "rustic/traditional… warm and casual, not formal or upscale," and the
-  site's actual job is converting a tourist into an in-person visit, not
-  impressing with restraint. This direction is the most literal translation
-  of that brief, built entirely from confirmed everyday facts (free
-  tastings, drop-ins, the horse, the olive oil) rather than aspiration.
-- **Directions considered but not chosen:**
-  - *Horafa Survey* (cartographic/technical, built from the real 7-hectare
-    Horafa plot's elevation, soil, and LOT/harvest data) — too technical
-    and cold as a whole-site direction for a primary audience deciding
-    whether to visit in person; its motifs (real contour lines, LOT stamps,
-    field-note layout) remain a strong candidate for the Geography/Ecology
-    pages and the four nutrition/technical pages specifically, where the
-    content genuinely is data. Not yet approved — flag before using.
-  - *The Black Lady* (near-black/gold, built from the Tony/Black Lady
-    rescue story) — too formal and reverent as a whole-site direction given
-    the "warm, casual, not upscale" brand commitment. Its treatment remains
-    a candidate for the History page alone, as a deliberate one-page tonal
-    shift. Not yet approved — flag before using.
+- **Name:** Dusk at Horafa (purple-dominant / green-secondary)
+- **Core concept:** Purple is the wine itself — deep, plum, velvet, the
+  color of the logo and of wine at dusk — and it now runs through the
+  entire site as the dominant environment, not just headlines and buttons.
+  Green is the land: it surfaces only where the content is actually about
+  the vineyard (the "we play music to our wines" moment, Geography's large
+  hillside view, Ecology's wildlife section), never as decoration for its
+  own sake. Cream/paper is gone as a page ground; a warm off-white now
+  exists only as a small, contained "reading panel" inside `.frame`
+  captions and nowhere else.
+- **Emotional feeling:** Editorial, cinematic, tactile — an evening wine
+  journal rather than a bright daytime brochure. Full-bleed dark
+  environments, oversized italic type, and photography treated as
+  architecture (frames that bleed to the edge, overlap, and vary in scale)
+  instead of content dropped into boxes.
+- **Why it fits this business:** The owner's brief was explicit: purple
+  must dominate, green must stay secondary and tied to land/vineyard
+  content specifically, and the whole site should stop reading like an
+  AI-generated template (repetitive image/text rows, generic rectangular
+  photo boxes, flat cream backgrounds). This direction answers all three
+  by making purple the architecture (not a rare accent) and by giving each
+  major section its own composition instead of one repeating pattern.
+- **Superseded direction:** *The Long Table* (purple/green on a warm
+  cream/paper ground, alternating image/text rows) — built earlier this
+  project and genuinely on-brand, but the owner asked for a full rework:
+  purple needed to dominate rather than share the page evenly with a cream
+  ground, and the alternating-row pattern used on Wines/Home/History
+  needed to be broken up rather than repeated page to page.
 
 ## 2. Visual motifs
 
 | Motif | What it is | Where it comes from | How it appears on the site | Status |
 |---|---|---|---|---|
-| Olive branch line | A simple line-drawn olive branch/leaf mark | The winery's own olive oil, used to seal the wine once ready | Philosophy page (near the olive-oil detail) and the closing home-page invitation | Built |
-| Vine-row lines | Thin converging lines suggesting rows of vines in perspective | The real planted rows at Horafa (7 hectares, about half planted) | Low-opacity full-bleed backdrop on every page-hero and the home-page quote moment | Built |
-| Hand-tied twine divider | A short twine/string line with a small knot | Real bottle labeling process | Small divider under the wordmark and above every page-hero headline, replacing the old squiggle | Built |
-| Vine cane | A single meandering vine-cane line with two leaf sprigs | An actual grapevine cane | Used once, at the top of the History page's framed section | Built |
-| Kanello mark | A small line-drawn horse silhouette | The family's real pet horse, who lives at the vineyard | Once, beside the wildlife paragraph on the Ecology page | Built |
-| Regional roof-tile edge | A repeating barrel-tile silhouette (via CSS radial-gradient), not a straight or wavy edge | Regional Kos architecture | Bottom edge of the home page's closing invitation | Built |
-| Oak barrel stave grain | A woodgrain texture with visible stave seams | Real oak-barrel ageing (6–36 months depending on the wine) | — | Not yet built |
-| Black Lady cluster mark | A small engraved-style grape-cluster mark, drawn to Mavrothilyko's real cluster shape | The family's signature grape | — | Not yet built; considered for the Wines page |
+| Vine-row lines | Thin converging lines suggesting rows of vines in perspective | The real planted rows at Horafa (7 hectares, about half planted) | Low-opacity backdrop on the home hero, quote moment, and every purple page-hero | Built |
+| Topographic contour lines | Wavy horizontal contour-map lines | Horafa's real elevation (~300m) on the northern slope of Mount Dikaios | Geography's full-viewport hillside moment | Built |
+| Hand-tied twine divider | A short twine/string line with a small knot | Real bottle labeling process | Under the home wordmark | Built |
+| Vine cane | A single meandering vine-cane line with two leaf sprigs | An actual grapevine cane | History, beside the "end of the last century" entry | Built |
+| Kanello mark | A small line-drawn horse silhouette | The family's real pet horse, who lives at the vineyard | Once, beside the wildlife paragraph on Ecology | Built |
+| Olive branch line | A simple line-drawn olive branch/leaf mark | The winery's own olive oil, used to seal the wine once ready | Philosophy's closing note, home's closing invitation | Built |
+| Film grain | An extremely subtle noise texture (SVG feTurbulence, ~5% opacity, overlay blend) | The tactile, unfiltered, hand-crafted character of the wine itself — not a digital-flat surface | Every full-bleed environment section (`.grain`) and every `.frame` | Built |
+| Regional roof-tile edge | A repeating barrel-tile silhouette (via CSS radial-gradient) | Regional Kos architecture | Bottom edge of the home page's closing invitation | Built |
+| Black Lady cluster mark | A small engraved-style grape-cluster mark, drawn to Mavrothilyko's real cluster shape | The family's signature grape | — | Not yet built; still a candidate for the Wines page |
 
 ## 3. Typography
 
-- **Display/heading face:** Instrument Serif (italic used for most
-  headline treatments, matching the italic convention already established
-  site-wide)
-- **Body face:** Karla
-- **Pairing rationale:** Bodoni Moda read polished but safe — closer to a
-  fashion label than a family that waves you in for a free tasting — and
-  was flagged as an open tension against the "not upscale" brand
-  commitment (see prior log entry below). Instrument Serif's slightly
-  irregular italic has real character without tipping into costume the way
-  a decorative script would, and sits closer to "warm and casual." Karla is
-  a humanist sans that reads friendly and legible at body-text sizes,
-  reinforcing the same shift away from formal/editorial. Explored as one of
-  four options in a dedicated type pitch (Yeseva One/Vollkorn, Instrument
-  Serif/Karla, IM Fell English/Source Serif 4, Bricolage Grotesque/Karla)
-  before this pick.
-- **Multiple fonts across the site:** Considered and confirmed against how
-  real premium wineries actually do this — a tight system of 2–3 font
-  *roles* (display, body, occasional accent) used consistently everywhere,
-  not a different typeface identity per page. Site-wide, that's just
-  Instrument Serif + Karla. The one controlled exception under discussion
-  is reserving IM Fell English *only* for the History page as a deliberate
-  one-page tonal shift for the Tony/Black Lady story — not yet approved,
-  flag before using.
-- **Scale/hierarchy approach:** Oversized italic display headlines for
-  section openers (kept from current build); one real family quote (about
-  hosting drop-ins, or Kanello) set oversized across a full-bleed moment as
-  a typographic centerpiece — new for this direction, see §7.
-- **Where typography becomes a visual element:** The oversized quote
-  moment above; LOT numbers and harvest-date figures set in a mono/technical
-  face as small, real "field tag" labels near the wine-specific sections
-  (borrowed narrowly from the Horafa Survey direction, not the whole
-  palette).
+Unchanged from the previous direction — this redesign is about color,
+composition, backgrounds, and motion, not typeface. Instrument Serif
+(display, italic) + Karla (body) stay, per the existing approved decision
+(§10 log). What's new here is how much more typography is asked to do
+compositionally:
+
+- **Oversized editorial statements:** Page `<h1>`s now run as large as
+  `clamp(3rem, 9vw, 6.5rem)` and sit at the bottom of a full-width
+  environment moment (`.page-hero`) rather than centered in a small box.
+- **Small uppercase labels (`.label-meta`, `.eyebrow`):** Gold-light,
+  letter-spaced, used as "field tag" style section numbers (`01 — A quiet
+  practice`) tying every page into the same numbered sequence used in the
+  home page's index.
+- **Contrast of scale:** Giant italic headlines against small caption/meta
+  text is now the default rhythm of every hero and feature moment, rather
+  than a single mid-size heading + paragraph.
 
 ## 4. Color
 
 - **Palette** (all hex values are the winery's real, already-established
-  brand colors — none invented for this direction):
+  brand colors, or direct darker tints of them — nothing invented):
   - Purple `#4a2545` (`--purple`) — from the real logo
   - Purple Deep `#341a30` (`--purple-deep`)
+  - Purple Bright `#6b3563` (`--purple-bright`)
+  - Purple 950 `#1b0e18` (`--purple-950`) — **new**, a darker tint of the
+    same purple, used for large environments where the mid-tone alone
+    read flat/muddy at full-bleed scale, and as the site's default page
+    background
   - Green `#4c6b3f` (`--green`) — vine/olive world
   - Green Deep `#34492b` (`--green-deep`)
-  - Gold `#b98b3e` (`--gold`) — confirmed accent, matches the real Black
-    Lady bottle's dark-glass/gold-label look
-  - Cream/paper `#f8f1e4` / `#fffdf9` (`--cream` / `--paper`) — warm
-    limewash-inspired ground, already established
-  - Ink `#2a2126` (`--ink`)
-  - Barrel Oak `#6b4a32` — **material tone, not a primary color** — used
-    only for the oak-stave texture motif, where a literal wood color is
-    part of the honesty of the material
-- **Primary / secondary / accent roles:** Purple and green are the two main
-  colors, used for headlines, section moments, and the two "family" motif
-  colors (olive/vine = green, brand mark = purple). Gold stays a rare
-  accent (labels, dividers, the one Black Lady cluster mark) — never a
-  background fill. Cream/paper is the resting ground for most content;
-  oak brown appears only where wood texture is the actual subject.
-- **Where each color is used and why:** Full-bleed purple or green moments
-  are reserved for the two or three most important story beats per page
-  (the legacy statement, a closing invitation) — not applied as a default
-  section background the way the previous "band" system did. Most of the
-  page rests on the warm cream ground so the purple/green moments keep
-  their impact instead of becoming wallpaper.
+  - Green Bright `#6a8f57` (`--green-bright`)
+  - Green 950 `#1b2616` (`--green-950`) — **new**, same rationale as
+    Purple 950, and needed so gold-light text on a green environment
+    (the quote moment) holds AA contrast
+  - Gold `#b98b3e` / Gold Light `#d9b876` — accent only: small labels,
+    dividers, hover states — never a background fill
+  - Paper `#f6f2f4` (`--paper`) — **replaces the old warm cream
+    `#f8f1e4`.** Deliberately desaturated and tinted from the purple
+    family rather than warm beige, and used *only* inside `.panel`, a
+    small contained reading surface — never as a page or section ground
+  - Mist `#f4eef2` (`--mist`) / Mist Dim / Mist Faint — the site's default
+    text colors on the dark purple ground (a soft warm-white, not pure
+    `#fff`, so text stays tied to the brand hue)
+- **Primary / secondary / accent roles:** Purple is the site's
+  architecture — the default background of `body`, every header/footer,
+  every page-hero, and both home-page feature moments. Green is reserved
+  for vineyard/land content specifically (the quote moment, Geography's
+  hero, part of Ecology) — never used "to balance the palette." Gold stays
+  a rare accent. Paper never appears as a background larger than a small
+  caption strip.
+- **Explicit rule:** No cream/ivory/beige/tan anywhere in the visual
+  identity. If a light neutral is structurally necessary (a caption
+  needs to sit on a genuinely light surface), it is `--paper`, contained,
+  and small — never the resting ground of a page.
 
 ## 5. Imagery
 
 - **Photography direction:** Real, unstaged documentary photography once
   supplied by the owner — hands, the table, the horse, the tasting
-  courtyard — cropped generously and imperfectly, never posed "lifestyle
-  stock." See `PRODUCT.md`/`CLAUDE.md`: no stock or AI-generated imagery
-  may substitute for it.
+  courtyard, the vineyard rows — cropped generously and imperfectly, full
+  frame, edge-to-edge where the layout calls for it. See `PRODUCT.md`/
+  `CLAUDE.md`: no stock or AI-generated imagery may substitute for it.
 - **Status of real photography:** None supplied yet (confirmed absence,
-  see `SITE-CONTENT-NOTES.md`). All image slots ship as clearly labeled
-  placeholders ("Photo of the Horafa vineyard hillside — coming soon"),
-  never generic "photo coming soon."
-- **Placeholder convention until real photos arrive:** Keep the existing
-  labeled-placeholder pattern (icon + specific caption naming exactly what
-  will go there), styled to this direction's warm palette rather than the
-  previous neutral dashed-box treatment.
-- **Treatment (once real photos exist):** Warm, sunlit color grade, natural
-  light, imperfect framing — the opposite of studio-lit product photography.
+  see `SITE-CONTENT-NOTES.md`). Every image slot is now a `.frame` — a
+  deep-toned gradient plate with a small corner caption naming exactly
+  what will go there, styled like a blank plate in a printed layout
+  rather than an empty-state UI icon (dashed box + centered icon, the
+  previous convention). The same markup holds a real `<img>` later with
+  no structural change.
+- **Frame variants:** `.frame--portrait` (3:4), `.frame--tall` (3:4),
+  `.frame--square` (1:1), `.frame--wide` (21:9), `.frame--full` (edge to
+  edge, 100vw), `.frame--fill` (stretches to fill an absolutely
+  positioned parent, used behind full-bleed section backgrounds) — chosen
+  per composition rather than one aspect ratio reused everywhere.
+- **Treatment (once real photos exist):** Warm, sunlit color grade,
+  natural light, imperfect framing — the opposite of studio-lit product
+  photography.
 
 ## 6. Background & texture system
 
-- **What backgrounds are made of on this site:** Mostly the warm cream/paper
-  ground; oak-grain texture reserved for wine-specific sections; vine-row
-  linework as a subtle background layer under the hero and Geography
-  content; purple/green full-bleed moments used sparingly, as composed
-  editorial sections (photo or quote-led), not as a repeating default
-  section wrapper.
+- **What backgrounds are made of now:** The deep purple environment
+  (`--purple-950` and gradients toward `--purple`/`--purple-deep`) is the
+  default surface of the entire site — `body`, header, footer, every
+  page-hero. Green environments exist only where the content is
+  vineyard/land-specific. A subtle film-grain layer (`.grain`) sits over
+  every large environment section so flat digital gradients never read as
+  bare CSS. Vine-row and topographic-contour linework appear as
+  low-opacity full-bleed backdrops behind hero content.
+- **Gradient direction matters:** Full-bleed frames use
+  `linear-gradient(to bottom right, ...)` (a true corner-to-corner
+  gradient) rather than a fixed angle — a fixed angle like `155deg`
+  reads fine on a portrait frame but goes almost invisibly dark across a
+  very wide, short section (the visible area ends up entirely past the
+  bright stop). "Environment" mood gradients (page-hero, quote-moment,
+  invite-close) use `to bottom`, since they're meant to read as a vertical
+  light-to-dark environment regardless of section width.
 - **Explicit rule for what is *not* used:** No generic circles, squiggly
-  lines, floating dots, or repeated decorative SVG patterns filling empty
-  space — this is the exact pattern being replaced (see art-direction skill
-  §1). Every line-based motif above (vine rows, olive branch, twine, roof
-  edge, horse mark) replaces that filler with something specific to this
-  property.
+  lines, floating dots, glassmorphism, or repeated decorative SVG patterns
+  filling empty space. No cream/ivory palette. Every line-based motif in
+  §2 replaces that filler with something specific to this property.
 
 ## 7. Layout archetypes
 
 | Archetype | Used on | Why this composition here |
 |---|---|---|
-| Asymmetric split hero | Home | Photo/placeholder on one side, a short "come as you are" invitation with real visiting facts (free tastings, hosts 6–40, message ahead) on the other — not a centered hero |
-| Full-bleed quote moment | Home (once, after the hero) | One real family quote set oversized, doing the emotional work a "legacy band" tried to do generically before |
-| Estate walk (alternating asymmetric rows) | Home (site-section index, after the quote moment) | The 7-page index originally shipped as a repeating photo-tile card grid — identical box repeated 7 times, the one part of Home that never went through this direction. Replaced with alternating left/right rows (`.walk`/`.walk-row`), separated by a thin purple→gold / green→gold hairline instead of card borders, with History and Wines given a larger `--featured` treatment (bigger media, bigger italic heading) to preserve the hierarchy the card version gestured at but couldn't express |
-| Long table list | Wines | The four wines as one continuous list with generous space, echoing an actual table setting, instead of a repeating card grid |
-| Quiet negative-space section | Philosophy | Deliberate breathing room between practice statements — no background color needed to feel intentional |
-| Framed editorial section | History | A visually distinct, quieter frame than the rest of the site, signaling "this is the one story that gets special treatment" (see the open Black Lady option in §1) |
-| Horizontal storytelling | Geography, Biology & Ecology | Real facts (elevation, soil, yield, wildlife) presented alongside the vine-row/contour linework rather than in a generic paragraph-under-heading stack |
+| Full-viewport cinematic hero | Home | Logo and lede overlap directly on a full-height purple environment with vine-row linework and an atmospheric glow — not logo+text+boxed-photo+button. The hero photo (once supplied) will fill this same environment layer, edge to edge |
+| Asymmetric bleeding split | Home ("Come as you are") | Photo frame and text each take a full half-height column, no padding trapping the photo in a small box |
+| Full-bleed quote moment | Home (after the hero) | One real family quote set oversized on a green (vineyard) environment |
+| Two feature moments + a quiet manifest | Home (site index, after the quote moment) | Replaces the earlier alternating-row index entirely: History and Wines each get a full-bleed cinematic moment (`.feature-moment`, purple); the other five pages collapse into one quiet numbered text list (`.manifest`) rather than repeating either treatment seven times |
+| Editorial manifesto | Philosophy | Large italic lead statement, sticky portrait frames beside long-form practice lists, deliberate negative space — quiet by design, on the purple ground rather than cream |
+| Archive | History | Alternating asymmetric entries with small dated labels and a centered pull-quote, styled like opening a family archive rather than a timeline component |
+| Large visual moment | Geography | A full-viewport green environment with topographic contour linework, an oversized "Horafa" headline, and a fact bar beneath — the single largest, most distinct visual moment on the site |
+| Organic / layered | Biology & Ecology | A small square frame overlaps a large wide frame (botanical detail over landscape), plus a quiet two-column zero-waste/solar note |
+| Dramatic product feature | Wines | Each wine gets a different composition (portrait media left, then right, then a full-bleed signature moment for Black Lady, then a square frame for Asfendiano) instead of a repeating three-column ecommerce grid |
+| Sense of place | Contact | A full-viewport photo environment carries the address/phone/email as an overlaid list, followed by a wide map frame — not a boxed "Contact Us" form |
 
 ## 8. Motion
 
-- **Motion philosophy:** Ambient and gentle — ties to the "unhurried" feeling
-  in §1. Nothing mechanical, nothing that reads as a corporate SaaS
-  scroll-reveal.
-- **What animates, and what deliberately doesn't:** A slow, one-time warm
-  light/fade-in on hero photography; a single count-up moment for real
-  stats (founding year, hectares, vines) is acceptable if kept subtle;
-  nothing else needs to move.
-- **Reduced-motion behavior (hard requirement):** Content must render fully
-  visible by default in CSS; JavaScript may only add a transient
-  pre-animation state once it has successfully set up, never hide content
-  by default. This was a real bug found and fixed earlier in this project
-  (a phone opening the site with scroll-animation JS blocked showed
-  permanently blank sections) — do not reintroduce that failure mode in
-  the rebuild.
+- **Motion philosophy:** Cinematic and restrained — slow, precise reveals,
+  never bouncy or mechanical. Nothing should read as a corporate SaaS
+  scroll-reveal library.
+- **What animates:**
+  - `.reveal` — the original fade/rise-in, kept for text blocks.
+  - `.reveal-mask` — a slower curtain clip-path reveal + gentle scale
+    settle (1.04 → 1), used on every `.frame`/photography moment.
+  - `.parallax` — a single shared, rAF-throttled scroll listener (see
+    `site.js`) drifts full-bleed background frames a few percent slower
+    than the surrounding content (`data-speed` per element). Transform-
+    only, GPU-friendly, one listener for the whole page.
+  - A single count-up on the home page's real stats (founding year,
+    hectares, vines), unchanged from before.
+- **Reduced-motion behavior (hard requirement, unchanged):** Content must
+  render fully visible by default in CSS; JavaScript may only add a
+  transient pre-animation state once it has successfully set up, and the
+  parallax listener is skipped entirely under `prefers-reduced-motion:
+  reduce`. This was a real bug found and fixed earlier in this project —
+  do not reintroduce it.
 
 ## 9. Responsive behavior
 
 | Breakpoint | What changes |
 |---|---|
-| 375px | Hero split stacks photo-then-invitation; vine-row background linework simplifies to a single thin line or drops entirely; the wine "table" list stays single-column with generous space rather than compressing into tight cards |
-| 768px | Hero split remains but narrows; oak-texture sections keep full width |
-| 1024px | Full asymmetric hero split; horizontal storytelling sections (Geography/Ecology) move from stacked to side-by-side fact/line-art layout |
-| 1440px | Full composition as designed; purple/green full-bleed moments get more breathing room rather than stretching content wider |
+| 375px | The cinematic hero drops to ~92svh with its corner caption hidden; every alternating/asymmetric composition (feature moments, archive entries, wine features, organic layered frames) stacks to a single column with photo above text; the manifest list keeps its numbered rows but wraps the description below the name instead of pushing it right |
+| 768px | Two-column archetypes (manifesto, archive, organic layered) still stack in most cases (breakpoint at 860px) but full-bleed moments (hero, geo-moment, visit) keep their environment height |
+| 1024px | Full asymmetric/alternating layouts apply; feature moments and the wine signature moment reach their full side-anchored composition |
+| 1440px | Full composition as designed; full-bleed environments get their complete gradient range rather than stretching content wider |
 
 ## 10. Design rationale / decision log
 
@@ -201,6 +219,7 @@ and built.
 | 2026-09-13 | Owner chose The Long Table, with purple and green as the main colors instead of the originally-pitched terracotta palette | Purple/green are the real, confirmed brand colors (logo + vine/olive world); owner's explicit request |
 | 2026-09-13 | Kept existing typography (Bodoni Moda / Cormorant Garamond) rather than switching to the Piazzolla/Karla pairing from the original pitch | Already real working infrastructure with a genuine brand tie (Black Lady label); the owner's feedback was about backgrounds/decoration, not type |
 | 2026-09-13 | Owner asked to explore fonts with more character; pitched 4 options and swapped display/body to Instrument Serif / Karla site-wide | Bodoni Moda read too polished/upscale against the "not upscale" brand tone; Instrument Serif has real personality without going decorative |
-| 2026-09-13 | Owner flagged that the font swap alone hadn't actually changed the site's structure — the old flat purple/green bands and circle-and-squiggle vine SVGs were still live. Rebuilt every page: removed `.band`/`VINE_TALL`/`VINE_DIVIDER` entirely; replaced with the motifs in §2 and the layout archetypes in §7 (asymmetric hero split, an oversized quote moment with an inline stat strip, a framed History section, fact strips on Geography/Ecology, and the Wines page as a continuous table list instead of a card grid) | Owner was right — documenting a direction is not the same as building it; the actual complaint (generic decoration) hadn't been addressed yet |
-| 2026-09-13 | `impeccable detect` flagged Instrument Serif itself as an increasingly overused face in AI-generated design (alongside Fraunces, Inter, etc.) | Not acted on unilaterally since the font was a separate, already-approved decision — flagged to the owner instead |
-| 2026-09-13 | Reviewer flagged that the home page's 7-page index section (below the quote moment) was still a repeating photo-tile card grid — the one section of Home never run through the art-direction process. Proposed 3 alternatives (a cartographic "field notes" list, a text-only numbered "long table" list, and alternating asymmetric rows); owner chose alternating rows. Rebuilt as `.walk`/`.walk-row` in §7 | The card grid violated CLAUDE.md's rule against repetitive/interchangeable sections and had no documented rationale; alternating rows let History and Wines keep the visual weight the old `--featured` card size gestured at |
+| 2026-09-13 | Owner flagged that the font swap alone hadn't actually changed the site's structure — the old flat purple/green bands and circle-and-squiggle vine SVGs were still live. Rebuilt every page under The Long Table direction | Owner was right — documenting a direction is not the same as building it |
+| 2026-09-13 | `impeccable detect` flagged Instrument Serif itself as an increasingly overused face in AI-generated design | Not acted on unilaterally since the font was a separate, already-approved decision — flagged to the owner instead |
+| 2026-09-13 | Reviewer flagged the home page's 7-page index was still a repeating photo-tile card grid; rebuilt as alternating asymmetric rows (`.walk`) | The card grid violated CLAUDE.md's rule against repetitive/interchangeable sections |
+| 2026-09-14 | Owner requested a complete visual redesign, not a polish: purple must dominate, green stays secondary and tied to land content, cream/paper must not be the visual identity, every major section must have a distinct composition, photography must be treated architecturally (full-bleed, varied crops, overlapping frames) instead of boxed, and motion should read as cinematic (parallax, mask reveals) not decorative. Superseded The Long Table with **Dusk at Horafa**: rebuilt every page (this file, §1–9) | This was a deliberate, explicit reversal of the previous direction, not a bug fix — logged rather than silently overwritten. Real photography still doesn't exist, so the redesign focused on what's actually buildable now: color, composition, background/texture, and motion — every image slot stays a labeled placeholder frame, ready for real photography, per `CLAUDE.md`'s rule against stock/AI imagery |

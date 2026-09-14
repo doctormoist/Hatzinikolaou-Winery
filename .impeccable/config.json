@@ -20,6 +20,294 @@
         ],
         "createdAt": "2026-09-13T23:32:08.002Z",
         "reason": "Winery's real, established brand ground (--cream/--paper), documented in DESIGN-DIRECTION.md §4 as already-established, paired with the real logo purple — not a generic default"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T23:52:07.399Z",
+        "reason": "Intentional full-bleed crop containers (.frame/.hero-cinematic/.feature-moment/.geo-moment/.visit/.quote-moment/.invite-close) — overflow:hidden crops oversized parallax background layers to their section, by design; none contain a tooltip/menu/popover that needs to escape"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "philosophy.html"
+        ],
+        "createdAt": "2026-09-14T00:01:57.018Z",
+        "reason": "Same shared .frame/.page-hero crop containers as index.html — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "history.html"
+        ],
+        "createdAt": "2026-09-14T00:04:17.251Z",
+        "reason": "Same shared .frame/.page-hero crop containers — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "geography.html"
+        ],
+        "createdAt": "2026-09-14T00:05:49.921Z",
+        "reason": "Same shared .frame/.geo-moment crop containers — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "ecology.html"
+        ],
+        "createdAt": "2026-09-14T00:07:24.121Z",
+        "reason": "Same shared .frame crop containers — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "wines.html"
+        ],
+        "createdAt": "2026-09-14T00:11:21.550Z",
+        "reason": "Same shared .frame/.feature-moment crop containers — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "eshop.html"
+        ],
+        "createdAt": "2026-09-14T00:12:49.814Z",
+        "reason": "Same shared .frame crop container — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-09-14T00:13:32.098Z",
+        "reason": "Same shared .frame/.visit crop containers — intentional, no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "philosophy.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.683Z",
+        "reason": "User's brief explicitly requested this: small uppercase labels + oversized italic headline as a deliberate scale-contrast device (§12 of the redesign brief). It also doubles as the numbered chapter sequence (01-07) tying every page back to the home index — functional wayfinding, not decoration."
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "history.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.693Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "ecology.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.702Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "wines.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.712Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "eshop.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.722Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-09-14T00:28:14.731Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "philosophy.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.682Z",
+        "reason": "Flagged element is a one-to-two-word oversized display headline (page-hero h1 / giant-word), not body copy. Tight leading (~1.0x) is standard, intentional editorial practice for large display type — the rule's own purpose is body-text readability."
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "geography.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.692Z",
+        "reason": "Same: oversized display headline (geo-moment h1), not body copy"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "geography.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.701Z",
+        "reason": "Flagged text is a short one-line meta label (geo-moment__coords), not a paragraph of body copy — well within the rule's own stated exception for short labels"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "philosophy.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.713Z",
+        "reason": "Flagged wrapper (.frame__mark) centers a single decorative aria-hidden icon with inset:0 — no text runs against the border. .frame__caption (real text) already has 18px/16px inset. .archive__entry has 72px vertical padding, not flush."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "history.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.725Z",
+        "reason": "Same .frame__mark decorative-icon pattern; .archive__entry has 72px padding, not flush"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "geography.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.741Z",
+        "reason": "Same .frame__mark decorative-icon pattern"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "ecology.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.759Z",
+        "reason": "Same .frame__mark decorative-icon pattern; .organic__overlap is a bordered frame with the same icon-only inset:0 wrapper"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "wines.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.768Z",
+        "reason": "Same .frame__mark decorative-icon pattern"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "eshop.html"
+        ],
+        "createdAt": "2026-09-14T00:28:26.777Z",
+        "reason": "Same .frame__mark decorative-icon pattern"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.920Z",
+        "reason": "Same .frame__mark decorative-icon pattern"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "philosophy.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.930Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "history.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.939Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "geography.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.949Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "ecology.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.959Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "wines.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.968Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "eshop.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.977Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-09-14T00:28:39.986Z",
+        "reason": "Already approved by owner; concern raised and logged in DESIGN-DIRECTION.md §10, not acted on unilaterally since it was a separate prior decision (same as index.html)"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "wines.html"
+        ],
+        "createdAt": "2026-09-14T00:28:57.139Z",
+        "reason": "Flagged text is a short index/eyebrow label (feature-moment__index / wine-feature__index, e.g. '01', '03 — The signature wine · €29'), not paragraph body copy — within the rule's own stated exception for short labels"
       }
     ]
   }

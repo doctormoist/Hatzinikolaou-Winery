@@ -40,6 +40,36 @@
     }
   }
 
+  // Subtle scroll parallax. Transform-only, one scroll listener shared by
+  // every .parallax element, rAF-throttled, and skipped entirely under
+  // reduced motion. Each element's data-speed sets how far it drifts
+  // relative to normal scroll (small values only — this should read as
+  // "alive", not as a moving-parts effect).
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('.parallax'));
+  if (parallaxEls.length && !reduceMotion) {
+    var ticking = false;
+    var updateParallax = function () {
+      var vh = window.innerHeight;
+      parallaxEls.forEach(function (el) {
+        var speed = parseFloat(el.getAttribute('data-speed') || '0.08');
+        var rect = el.getBoundingClientRect();
+        var center = rect.top + rect.height / 2;
+        var offset = (center - vh / 2) * speed;
+        el.style.setProperty('--parallax-y', offset.toFixed(1) + 'px');
+      });
+      ticking = false;
+    };
+    var onScroll = function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+    updateParallax();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  }
+
   // Count-up stats
   var statEls = document.querySelectorAll('.stat__number[data-target]');
   if (statEls.length) {
