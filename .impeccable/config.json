@@ -362,6 +362,78 @@
         ],
         "createdAt": "2026-09-14T00:36:59.609Z",
         "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every individual page file"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "nutrition-platanaki-pink.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.409Z",
+        "reason": "Same benign body/.sr-only skip-link pattern already ignored on every other page — not a tooltip/menu/popover"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "nutrition-platanaki-pink.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.421Z",
+        "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every other page"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "nutrition-platanaki-red.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.433Z",
+        "reason": "Same benign body/.sr-only skip-link pattern already ignored on every other page — not a tooltip/menu/popover"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "nutrition-platanaki-red.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.445Z",
+        "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every other page"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "nutrition-black-lady.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.458Z",
+        "reason": "Same benign body/.sr-only skip-link pattern already ignored on every other page — not a tooltip/menu/popover"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "nutrition-black-lady.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.471Z",
+        "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every other page"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "nutrition-asfendiano.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.483Z",
+        "reason": "Same benign body/.sr-only skip-link pattern already ignored on every other page — not a tooltip/menu/popover"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "nutrition-asfendiano.html"
+        ],
+        "createdAt": "2026-09-14T14:45:41.496Z",
+        "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every other page"
       }
     ]
   }

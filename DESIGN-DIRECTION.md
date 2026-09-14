@@ -138,6 +138,17 @@ compositionally:
   edge, 100vw), `.frame--fill` (stretches to fill an absolutely
   positioned parent, used behind full-bleed section backgrounds) — chosen
   per composition rather than one aspect ratio reused everywhere.
+- **Placeholder icon per frame:** Each `.frame__mark` now shows a small
+  line icon matching what its caption actually describes (grape cluster,
+  oak barrel, horse, hills, waves, wine bottle, shipping box, map pin,
+  a generic person/pair-of-people silhouette for the two portrait slots)
+  instead of one generic "photo" icon reused everywhere. Explicitly does
+  *not* extend to generating photorealistic stand-ins: the owner asked for
+  AI-generated placeholder photos and it was declined for two reasons —
+  the site-wide no-stock/no-AI-photography rule above, and, specifically
+  for the History page's Tony/family slots, that fabricating a likeness of
+  a real, named, deceased person is not something an "override" should
+  reach for even with sign-off. Icons stay schematic on purpose.
 - **Treatment (once real photos exist):** Warm, sunlit color grade,
   natural light, imperfect framing — the opposite of studio-lit product
   photography.
