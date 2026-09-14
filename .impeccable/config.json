@@ -308,6 +308,60 @@
         ],
         "createdAt": "2026-09-14T00:28:57.139Z",
         "reason": "Flagged text is a short index/eyebrow label (feature-moment__index / wine-feature__index, e.g. '01', '03 — The signature wine · €29'), not paragraph body copy — within the rule's own stated exception for short labels"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.555Z",
+        "reason": "Same numbered chapter-label device, explicitly requested in the redesign brief §12 (see per-page ignores on philosophy.html etc.) — this file is the single-file bundle of the same pages"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.566Z",
+        "reason": "Oversized display headlines (page-hero h1 / geo-moment h1), not body copy — same as philosophy.html/geography.html"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.577Z",
+        "reason": "Short meta/index labels (geo-moment__coords, feature-moment__index), not paragraph body copy — same as geography.html/wines.html"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.588Z",
+        "reason": "Same .frame__mark decorative-icon pattern and well-padded .archive__entry/.organic__overlap — same as the individual page files"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.598Z",
+        "reason": "Same intentional full-bleed crop containers as every individual page file — no tooltip/menu/popover involved"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "hatzinikolaou-winery-all-in-one.html"
+        ],
+        "createdAt": "2026-09-14T00:36:59.609Z",
+        "reason": "Already approved by owner; logged in DESIGN-DIRECTION.md §10 — same as every individual page file"
       }
     ]
   }
