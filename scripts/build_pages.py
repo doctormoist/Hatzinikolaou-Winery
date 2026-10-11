@@ -437,7 +437,7 @@ contact_body = f'''{page_hero("purple", "Contact", "Find us on the road between 
         <tr><th class="ui">Phone</th><td><a href="tel:+302242068921">+30 22420 68921</a></td></tr>
         <tr><th class="ui">Email</th><td><a href="mailto:hatzinikolaouwinery@gmail.com">hatzinikolaouwinery@gmail.com</a></td></tr>
       </table>
-      {photo_placeholder("Map &mdash; coming soon")}
+      <p class="reveal"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hatzinikolaou+Winery+Kos" target="_blank" rel="noopener">Get directions</a></p>
       {photo_placeholder("Photo of the tasting area &amp; courtyard &mdash; coming soon")}
     </div>'''
 
